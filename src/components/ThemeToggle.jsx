@@ -22,36 +22,29 @@ const ThemeToggle = () => {
     }, []);
 
     const icon =
-      theme === "light" ? <HiMoon size="1.5rem" /> : <CgSun size="1.5rem" />;
+      theme === "light" ? <HiMoon size="1.3rem" /> : <CgSun size="1.2rem" color="#fff" />;
 
     return (
-        <ToggleButton className={theme ==="dark" ? "" : "active"} onClick={changeTheme}>
+        <ToggleButton className={theme === "light" && ("active")} onClick={changeTheme}>
             {icon}
         </ToggleButton>
     );
 };
 
 const ToggleButton = styled.button`
-cursor: pointer;
-background-color: transparent;
-display: flex;
-width: 3rem;
-border: 2px solid #183754;
-border-radius: 30px;
-svg {
-    height: 1.2rem;
-    transform: translateX(0);
-    transition: all 1s linear;
-}
-
-&.active {
-svg {
-    transform: translateX(100%);
-}
-}
-
-
-    
-`
+  cursor: pointer;
+  background-color: ${(props) => props.theme.primaryBg};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  transition: all 0.5s linear;
+  &.active {
+    border: 2px solid #333;
+  }
+`;
 
 export default ThemeToggle;
