@@ -19,7 +19,7 @@ const ThemeToggle = () => {
     useEffect(() => {
       const localTheme = window.localStorage.getItem("theme");
       localTheme ? setTheme(localTheme) : setTheme("dark");
-    }, []);
+    });
 
     const icon =
       theme === "light" ? <HiMoon size="1.3rem" /> : <CgSun size="1.2rem" color="#fff" />;
