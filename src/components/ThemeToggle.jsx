@@ -41,7 +41,7 @@ const ToggleButton = styled.button`
   height: 2.5rem;
   border-radius: 50%;
   border: 2px solid #fff;
-  transition: all 0.5s linear;
+  transition: all 0.3s linear;
   &.active {
     border: 2px solid #333;
   }

@@ -18,3 +18,7 @@
     url("./fonts/Satoshi-Regular.ttf") format("truetype");
   font-weight: normal;
 }
+
+html {
+  scroll-behavior: smooth;
+}
