@@ -11,10 +11,12 @@ function App() {
       <GlobalStyles />
       <ThemeProvide>
         <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/" element={<SoftDev/>} />
-        </Routes>
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/" element={<SoftDev />} />
+          </Routes>
+        </main>
       </ThemeProvide>
     </div>
   );

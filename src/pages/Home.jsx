@@ -1,9 +1,10 @@
+import BHero from "../components/BHero";
 
 
 const Home = () => {
     return (
         <>
-            
+           <BHero/> 
         </>
     );
 };

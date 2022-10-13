@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import { FaAngleDown } from "react-icons/fa";
+// import { FaAngleDown } from "react-icons/fa";
 import Logo from "./Logo";
 
 const Header = () => {
@@ -14,7 +14,7 @@ const Header = () => {
   return (
     <StyledHeader>
       <Nav>
-        <Logo/>
+        <Logo />
         <MenuBar className={mobileOpen && "active"} onClick={mobileNavHandler}>
           <span></span>
           <span></span>
@@ -26,6 +26,10 @@ const Header = () => {
 };
 
 const StyledHeader = styled.header`
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
   width: 100%;
   height: 12vh;
   display: flex;
@@ -35,11 +39,11 @@ const StyledHeader = styled.header`
 `;
 
 const Nav = styled(motion.nav)`
-display: flex;
-justify-content: space-between;
-align-items: center;
-width: 87%;
-margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 87%;
+  margin: 0 auto;
 `;
 
 const MenuBar = styled.div`

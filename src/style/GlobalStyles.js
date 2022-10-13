@@ -11,6 +11,10 @@ body {
     font-family: 'Satoshi', sans-serif;
 }
 
+main {
+    margin-top: 12vh;
+}
+
 a {
     text-decoration: none;
 }
