@@ -1,4 +1,5 @@
 export const light = {
+  BB: "0.5px solid rgba(0, 0, 0, 0.1)",
   primaryBg: "#fff",
   blue: "#2d3161",
   menuBar: "#2d3161",
@@ -8,10 +9,11 @@ export const light = {
 };
 
 export const dark = {
-  primaryBg: "#16181c",
-  blue: "#2d3161",
+  BB: "0.5px solid rgba(225, 225, 225, 0.1)",
+  primaryBg: "#0f0e0e",
+  blue: "#46bcde",
   menuBar: "#fff",
-  text1: "#fff",
-  text2: "#fff",
-  text3: "#fff"
+  text1: "#d6e5fa",
+  text2: "#d6e5fa",
+  text3: "#d6e5fa",
 };

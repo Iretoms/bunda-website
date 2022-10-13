@@ -1,8 +1,10 @@
 import { useState } from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import { headerAnimate } from "../animation";
 // import { FaAngleDown } from "react-icons/fa";
 import Logo from "./Logo";
+import ThemeToggle from "./ThemeToggle";
 
 const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -13,8 +15,9 @@ const Header = () => {
 
   return (
     <StyledHeader>
-      <Nav>
+      <Nav variants={headerAnimate} initial="hide" animate="show">
         <Logo />
+        <ThemeToggle />
         <MenuBar className={mobileOpen && "active"} onClick={mobileNavHandler}>
           <span></span>
           <span></span>
@@ -34,8 +37,10 @@ const StyledHeader = styled.header`
   height: 12vh;
   display: flex;
   align-items: center;
+  border-bottom: ${(props) => props.theme.BB};
   background-color: ${(props) => props.theme.primaryBg};
   transition: background-color 0.3s ease-out;
+  
 `;
 
 const Nav = styled(motion.nav)`
@@ -44,6 +49,10 @@ const Nav = styled(motion.nav)`
   align-items: center;
   width: 87%;
   margin: 0 auto;
+
+  @media screen and (max-width: 40rem) {
+    width: 90%;
+  }
 `;
 
 const MenuBar = styled.div`
@@ -58,7 +67,7 @@ const MenuBar = styled.div`
     border-radius: 9999px;
     transition: all 0.3s ease-in-out;
     &:not(:last-child) {
-      margin-bottom: 5px;
+      margin-bottom: 7px;
     }
   }
   &.active {
