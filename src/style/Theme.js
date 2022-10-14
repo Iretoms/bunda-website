@@ -1,5 +1,6 @@
 export const light = {
   BB: "0.5px solid rgba(0, 0, 0, 0.1)",
+  line: "rgba(0, 0, 0, 0.1)",
   primaryBg: "#fff",
   blue: "#2d3161",
   menuBar: "#2d3161",
@@ -10,6 +11,7 @@ export const light = {
 
 export const dark = {
   BB: "0.5px solid rgba(225, 225, 225, 0.1)",
+  line: "rgba(225, 225, 225, 0.1)",
   primaryBg: "#0f0e0e",
   blue: "#46bcde",
   menuBar: "#fff",

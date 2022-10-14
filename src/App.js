@@ -14,7 +14,7 @@ function App() {
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/" element={<SoftDev />} />
+            <Route path="/software-development" element={<SoftDev />} />
           </Routes>
         </main>
       </ThemeProvide>
