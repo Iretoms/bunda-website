@@ -122,18 +122,25 @@ const Section = styled.section`
 `;
 
 const Container = styled.div`
-    width: 88%;
-    margin: 0 auto;
-    padding: 5rem 0;
+  width: 88%;
+  margin: 0 auto;
+  padding: 5rem 0;
+  .head {
+    text-align: center;
+    color: ${(props) => props.theme.text1};
+    font-weight: bold;
+    line-height: 2.7rem;
+    font-size: 2.3rem;
+    padding-bottom: 2rem;
+  }
+
+  @media screen and (max-width: 40rem) {
+    width: 90%;
     .head {
-        text-align: center;
-        color: ${props => props.theme.text1};
-        font-weight: bold;
-        line-height: 2.7rem;
-        font-size: 2.3rem;
-        padding-bottom: 2rem;
+      font-size: 2rem;
     }
-`
+  }
+`;
 
 const About = styled(motion.div)`
   display: flex;
@@ -155,23 +162,44 @@ const About = styled(motion.div)`
     margin-top: 2.5rem;
     height: 5rem;
     width: 1px;
-    background-color: ${props => props.theme.line};
+    background-color: ${(props) => props.theme.line};
+  }
+
+  @media screen and (max-width: 40rem) {
+    flex-direction: column;
+    gap: 1.5rem;
+    article {
+      width: 100%;
+      h2 {
+        margin-bottom: 0.2rem;
+      }
+      p {
+        font-size: 1rem;
+      }
+    }
+    .line {
+      display: none;
+    }
   }
 `;
 
 const Cards = styled(motion.div)`
-margin-top: 5rem;
-    display: flex;
-    justify-content: space-between;
-    gap: 1.5rem;
-`
+  margin-top: 5rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+
+  @media screen and (max-width: 40rem) {
+    flex-direction: column;
+  }
+`;
 
 const Card = styled(motion.article)`
-width: 20rem;
-height: 21rem;
-padding: 1.5rem;
-border: ${props=>props.theme.BB};
-border-radius: 10px;
+  width: 20rem;
+  height: 21rem;
+  padding: 1.5rem;
+  border: ${(props) => props.theme.BB};
+  border-radius: 10px;
   div {
     width: 3.5rem;
     height: 3.5rem;
@@ -197,6 +225,10 @@ border-radius: 10px;
   p {
     font-size: 0.9rem;
     color: ${(props) => props.theme.text2};
+  }
+
+  @media screen and (max-width: 40rem) {
+    width: 100%;
   }
 `;
 
