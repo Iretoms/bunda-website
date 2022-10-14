@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import { textAnimate } from "../animation";
 import advertising from "../assets/png/advertising.png"
 import consulting from "../assets/png/consulting.png"
 import handshake from "../assets/png/handshake.png";
@@ -8,11 +9,23 @@ const BAboutUs = () => {
     return (
       <Section id="about">
         <Container>
-          <div>
-            <h1 className="head">About Us</h1>
-          </div>
-          <About>
-            <article>
+          <motion.div
+            initial="hide"
+            whileInView={"show"}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ staggerChildren: 0.5 }}
+          >
+            <motion.h1 variants={textAnimate} className="head">
+              About Us
+            </motion.h1>
+          </motion.div>
+          <About
+            initial="hide"
+            whileInView={"show"}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ staggerChildren: 0.5 }}
+          >
+            <motion.article variants={textAnimate}>
               <h2>Who We Are</h2>
               <p>
                 Welcome to Bunda. Bunda is a foremost management consultancy
@@ -20,9 +33,9 @@ const BAboutUs = () => {
                 and celebrity endorsement, event management and activations,
                 brand management, and production.
               </p>
-            </article>
-            <div className="line"></div>
-            <article>
+            </motion.article>
+            <motion.div variants={textAnimate} className="line"></motion.div>
+            <motion.article variants={textAnimate}>
               <h2>What We Offer</h2>
               <p>
                 Bunda plays vital roles in responding to market stimulus and
@@ -32,26 +45,37 @@ const BAboutUs = () => {
                 everything, which makes us stand out from the crowd and results
                 in our highly commendable success rate.
               </p>
-            </article>
+            </motion.article>
           </About>
           <Cards>
-            <div>
-              <Card>
+            <motion.div
+              initial="hide"
+              whileInView={"show"}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ staggerChildren: 0.5 }}
+            >
+              <Card variants={textAnimate}>
                 <div className="advertising">
                   <img src={advertising} alt="advertising" />
                 </div>
                 <h3>Media Advertising</h3>
                 <p>
-                  A part of our core value is to create the best possible image and positioning for our
-                  many clients. Hence, we have invested notable efforts in
-                  establishing relationships across media houses in Nigeria, key
-                  brand promoters worldwide, and academic experts who provide us
-                  with up-to-date developments and research.
+                  A part of our core value is to create the best possible image
+                  and positioning for our many clients. Hence, we have invested
+                  notable efforts in establishing relationships across media
+                  houses in Nigeria, key brand promoters worldwide, and academic
+                  experts who provide us with up-to-date developments and
+                  research.
                 </p>
               </Card>
-            </div>
-            <div>
-              <Card>
+            </motion.div>
+            <motion.div
+              initial="hide"
+              whileInView={"show"}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ staggerChildren: 0.5 }}
+            >
+              <Card variants={textAnimate}>
                 <div className="consult">
                   <img src={consulting} alt="consultancy" />
                 </div>
@@ -64,9 +88,14 @@ const BAboutUs = () => {
                   across industries and countries.
                 </p>
               </Card>
-            </div>
-            <div>
-              <Card>
+            </motion.div>
+            <motion.div
+              initial="hide"
+              whileInView={"show"}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ staggerChildren: 0.5 }}
+            >
+              <Card variants={textAnimate}>
                 <div className="public">
                   <img src={handshake} alt="public" />
                 </div>
@@ -78,7 +107,7 @@ const BAboutUs = () => {
                   make our partners, talents, and employees productive.
                 </p>
               </Card>
-            </div>
+            </motion.div>
           </Cards>
         </Container>
       </Section>
