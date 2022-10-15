@@ -146,19 +146,34 @@ const Container = styled.div`
     right: 5.5rem;
     top: 17rem;
   }
+
+  @media screen and (max-width: 40rem) {
+    width: 90%;
+    padding: 2rem 0;
+    .head {
+      font-size: 2rem;
+    }
+    .navigate {
+        display: none;
+    }
+  }
 `;
 
 const SwiperContainer = styled(motion.article)`
-    width: 50%;
-    margin: 0 auto;
-    .swiper-slide {
-        height: 24rem;
-    }
+  width: 50%;
+  margin: 0 auto;
+  .swiper-slide {
+    height: 24rem;
+  }
 
-    .swiper-pagination-bullet-active {
-        background-color: ${props => props.theme.blue};
-    }
-`
+  .swiper-pagination-bullet-active {
+    background-color: ${(props) => props.theme.blue};
+  }
+
+  @media screen and (max-width: 40rem) {
+   width: 100%;
+  }
+`;
 
 const Card = styled(motion.div)`
   width: 100%;
