@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import {textAnimate} from "../animation"
 import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Scrollbar, A11y  } from "swiper";
@@ -15,10 +16,22 @@ const Testimony = () => {
     return (
       <Section>
         <Container>
-          <div>
-            <h1 className="head">Testimonials</h1>
-          </div>
-          <SwiperContainer>
+          <motion.div
+            initial="hide"
+            whileInView={"show"}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ staggerChildren: 0.5 }}
+          >
+            <motion.h1 variants={textAnimate} className="head">
+              Testimonials
+            </motion.h1>
+          </motion.div>
+          <SwiperContainer
+            initial="hide"
+            whileInView={"show"}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ staggerChildren: 0.5 }}
+          >
             <Swiper
               modules={[Navigation, Pagination, Scrollbar, A11y]}
               spaceBetween={10}
@@ -31,7 +44,7 @@ const Testimony = () => {
               pagination={true}
             >
               <SwiperSlide>
-                <Card>
+                <Card variants={textAnimate}>
                   <div>
                     <img src={ceo} alt="" />
                   </div>
