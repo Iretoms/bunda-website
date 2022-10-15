@@ -1,5 +1,6 @@
 import BAboutUs from "../components/BAboutUs";
 import BHero from "../components/BHero";
+import Testimony from "../components/Testimony";
 
 
 const Home = () => {
@@ -7,6 +8,7 @@ const Home = () => {
         <>
            <BHero/> 
            <BAboutUs/>
+           <Testimony/>
         </>
     );
 };

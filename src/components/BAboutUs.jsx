@@ -151,7 +151,7 @@ const About = styled(motion.div)`
     h2 {
       color: ${(props) => props.theme.text1};
       font-weight: 500;
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
     }
     p {
       font-size: 1.1rem;
@@ -184,7 +184,7 @@ const About = styled(motion.div)`
 `;
 
 const Cards = styled(motion.div)`
-  margin-top: 5rem;
+  margin-top: 6rem;
   display: flex;
   justify-content: space-between;
   gap: 1.5rem;
