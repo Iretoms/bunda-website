@@ -50,11 +50,11 @@ const Testimony = () => {
                   </div>
                   <h3>Gboyega Okegbenro</h3>
                   <p>CEO, Peachtree Comms Ltd.</p>
-                  <em>
-                    "We needed SMS Marketing to generate revenue, We chose Bunda
+                  <q>
+                    We needed SMS Marketing to generate revenue, We chose Bunda
                     digital solutions, We are glad we did because it was SMS
-                    Marketing like no other."
-                  </em>
+                    Marketing like no other.
+                  </q>
                 </Card>
               </SwiperSlide>
               <SwiperSlide>
@@ -64,12 +64,12 @@ const Testimony = () => {
                   </div>
                   <h3>Toyin Elefontuyi</h3>
                   <p>Qonvex Tech Ltd</p>
-                  <em>
-                    "Bundakten was a real pleasure to work with and we look
+                  <q>
+                    Bundakten was a real pleasure to work with and we look
                     forward to working with them again. they are definitely the
                     kind of designer you can trust with a project from start to
-                    finish."
-                  </em>
+                    finish.
+                  </q>
                 </Card>
               </SwiperSlide>
               <SwiperSlide>
@@ -79,11 +79,11 @@ const Testimony = () => {
                   </div>
                   <h3>Folakunle Gbadamosi</h3>
                   <p>CEO, Fly Athletics, Uk</p>
-                  <em>
-                    "Bundakten digital solutions provided me with an exceptional
+                  <q>
+                    Bundakten digital solutions provided me with an exceptional
                     website. Their team is outstanding, talented, and
-                    hardworking."
-                  </em>
+                    hardworking.
+                  </q>
                 </Card>
               </SwiperSlide>
             </Swiper>
@@ -117,7 +117,7 @@ const Container = styled.div`
     font-weight: bold;
     line-height: 2.7rem;
     font-size: 2.3rem;
-    padding-bottom: 2rem;
+    padding-bottom: 3rem;
   }
 
   .navigate {
