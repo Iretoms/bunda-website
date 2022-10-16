@@ -7,6 +7,7 @@ export const light = {
   text1: "#2d3161",
   text2: "#2d2d31",
   text3: "#525256",
+  FB: "1px solid #2d2d31",
 };
 
 export const dark = {
@@ -18,4 +19,5 @@ export const dark = {
   text1: "#d6e5fa",
   text2: "#d6e5fa",
   text3: "#d6e5fa",
+  FB: "1px solid #d6e5fa",
 };
