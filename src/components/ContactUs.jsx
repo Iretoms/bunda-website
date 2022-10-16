@@ -1,16 +1,29 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import {textAnimate} from "../animation"
 
 
 const ContactUs = () => {
     return (
       <Section id="contact">
         <Container>
-          <div>
-            <h1 className="head">Contact Us</h1>
-          </div>
-          <FormContainer>
-            <form>
+          <motion.div
+            initial="hide"
+            whileInView={"show"}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ staggerChildren: 0.5 }}
+          >
+            <motion.h1 variants={textAnimate} className="head">
+              Contact Us
+            </motion.h1>
+          </motion.div>
+          <FormContainer
+            initial="hide"
+            whileInView={"show"}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ staggerChildren: 0.5 }}
+          >
+            <motion.form variants={textAnimate}>
               <div className="form-control name">
                 <label htmlFor="name">Name</label>
                 <input type="text" name="name" />
@@ -24,7 +37,7 @@ const ContactUs = () => {
                 <textarea name="message" id="" cols="30" rows="10"></textarea>
               </div>
               <button type="submit">Send</button>
-            </form>
+            </motion.form>
           </FormContainer>
         </Container>
       </Section>
