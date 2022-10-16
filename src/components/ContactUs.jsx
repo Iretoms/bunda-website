@@ -63,6 +63,13 @@ const Container = styled.div`
     font-size: 2.3rem;
     padding-bottom: 3rem;
   }
+
+  @media screen and (max-width: 40rem) {
+    width: 90%;
+    .head {
+      font-size: 2rem;
+    }
+  }
 `;
 
 const FormContainer = styled(motion.article)`
@@ -104,17 +111,21 @@ const FormContainer = styled(motion.article)`
       }
     }
 
-     button {
-        margin-top: 1rem;
-        cursor: pointer;
-        font-size: 1rem;
-        font-family: inherit;
-        border: none;
-        border-radius: 10px;
-        background-color: ${props => props.theme.blue};
-        color: #fff;
-        padding: 1rem 2.5rem;
-     }
+    button {
+      margin-top: 1rem;
+      cursor: pointer;
+      font-size: 1rem;
+      font-family: inherit;
+      border: none;
+      border-radius: 10px;
+      background-color: ${(props) => props.theme.blue};
+      color: #fff;
+      padding: 1rem 2.5rem;
+    }
+  }
+
+  @media screen and (max-width: 40rem) {
+    width: 100%;
   }
 `;
 
