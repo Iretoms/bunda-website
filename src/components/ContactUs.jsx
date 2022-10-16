@@ -1,47 +1,56 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import {textAnimate} from "../animation"
-
+import { textAnimate } from "../animation";
 
 const ContactUs = () => {
-    return (
-      <Section id="contact">
-        <Container>
-          <motion.div
-            initial="hide"
-            whileInView={"show"}
-            viewport={{ once: true, amount: 0.5 }}
-            transition={{ staggerChildren: 0.5 }}
-          >
-            <motion.h1 variants={textAnimate} className="head">
-              Contact Us
-            </motion.h1>
-          </motion.div>
-          <FormContainer
-            initial="hide"
-            whileInView={"show"}
-            viewport={{ once: true, amount: 0.5 }}
-            transition={{ staggerChildren: 0.5 }}
-          >
-            <motion.form variants={textAnimate}>
-              <div className="form-control name">
-                <label htmlFor="name">Name</label>
-                <input type="text" name="name" />
-              </div>
-              <div className="form-control email">
-                <label htmlFor="email">Email</label>
-                <input type="email" name="name" />
-              </div>
-              <div className="form-control message">
-                <label htmlFor="message">Message</label>
-                <textarea name="message" id="" cols="30" rows="10"></textarea>
-              </div>
-              <button type="submit">Send</button>
-            </motion.form>
-          </FormContainer>
-        </Container>
-      </Section>
-    );
+  const onSubmit = (e) => {
+    e.preventDefault();
+  };
+
+  return (
+    <Section id="contact">
+      <Container>
+        <motion.div
+          initial="hide"
+          whileInView={"show"}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ staggerChildren: 0.5 }}
+        >
+          <motion.h1 variants={textAnimate} className="head">
+            Contact Us
+          </motion.h1>
+        </motion.div>
+        <FormContainer
+          initial="hide"
+          whileInView={"show"}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ staggerChildren: 0.5 }}
+        >
+          <motion.form variants={textAnimate} onSubmit={onSubmit}>
+            <div className="form-control name">
+              <label htmlFor="name">Name</label>
+              <input type="text" name="name" required />
+            </div>
+            <div className="form-control email">
+              <label htmlFor="email">Email</label>
+              <input type="email" name="name" required />
+            </div>
+            <div className="form-control message">
+              <label htmlFor="message">Message</label>
+              <textarea
+                name="message"
+                id=""
+                cols="30"
+                rows="10"
+                required
+              ></textarea>
+            </div>
+            <button type="submit">Send</button>
+          </motion.form>
+        </FormContainer>
+      </Container>
+    </Section>
+  );
 };
 
 const Section = styled.section`
@@ -99,6 +108,7 @@ const FormContainer = styled(motion.article)`
         color: ${(props) => props.theme.text3};
         background-color: transparent;
         &:focus {
+          border-color: ${(props) => props.theme.blue};
           outline: none;
         }
       }
