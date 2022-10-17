@@ -1,9 +1,11 @@
 import styled from "styled-components";
+import { useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
-import {textAnimate, imageAnimate} from "../animation"
+import { textAnimate, imageAnimate } from "../animation";
 import heroImage from "../assets/svg/heroImage.svg";
 
 const BHero = () => {
+  const location = useLocation();
   return (
     <Section>
       <Container>
@@ -13,11 +15,14 @@ const BHero = () => {
           transition={{ staggerChildren: 0.5 }}
         >
           <motion.h1 variants={textAnimate} className="hero_title">
-            Brand Management, Media Buying, Talent Booking and so much more.
+            {location.pathname === "/"
+              ? "Brand Management, Media Buying, Talent Booking and so much more."
+              : "Digital Marketing, Design, Web and Mobile Development Services."}
           </motion.h1>
           <motion.p variants={textAnimate} className="hero_subtitle">
-            Bunda is a foremost management consultancy specializing event
-            management and activations, brand management and production.
+            {location.pathname === "/"
+              ? "Bunda is a foremost management consultancy specializing event management and activations, brand management and production."
+              : "Bundakten, The place where your exploration ends and expertise begins."}
           </motion.p>
           <motion.div variants={textAnimate} className="hero_cta--container">
             <motion.a href="#contact" className="hero_cta--button">
@@ -66,7 +71,7 @@ const Container = styled(motion.div)`
     flex-direction: column;
     gap: 5rem;
     article {
-        width: 100%;
+      width: 100%;
     }
   }
 `;
@@ -100,10 +105,10 @@ const Text = styled(motion.article)`
   @media screen and (max-width: 40rem) {
     text-align: center;
     .hero_title {
-        font-size: 2rem;
+      font-size: 2rem;
     }
     .hero_subtitle {
-        font-size: 1rem;
+      font-size: 1rem;
     }
   }
 `;
@@ -114,12 +119,12 @@ const Image = styled(motion.article)`
   }
 
   @media screen and (max-width: 40rem) {
-    overflow:hidden;
+    overflow: hidden;
     width: 12rem;
-    height:20rem;
+    height: 20rem;
     .hero_image {
-        width: 100%;
-        height:100%;
+      width: 100%;
+      height: 100%;
     }
   }
 `;
