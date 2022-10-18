@@ -24,9 +24,7 @@ const Nav = () => {
         duration: 0.3,
       },
     },
-    exit: {
-      x: 100,
-    },
+    exit: { opacity: 0, x: 100 },
   };
 
   return (
