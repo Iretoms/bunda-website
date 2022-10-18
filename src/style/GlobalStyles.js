@@ -9,6 +9,9 @@ const GlobalStyles = createGlobalStyle`
 
 body {
     font-family: 'Satoshi', sans-serif;
+    &.fixed {
+        overflow: hidden;
+    }
 }
 
 main {

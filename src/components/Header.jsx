@@ -1,10 +1,11 @@
 import { useState } from "react";
 import styled from "styled-components";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { headerAnimate } from "../animation";
 // import { FaAngleDown } from "react-icons/fa";
 import Logo from "./Logo";
 import ThemeToggle from "./ThemeToggle";
+import Nav from "./Nav"
 
 const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -13,9 +14,13 @@ const Header = () => {
     setMobileOpen(!mobileOpen);
   };
 
+  mobileOpen
+    ? document.body.classList.add("fixed")
+    : document.body.classList.remove("fixed");
+
   return (
     <StyledHeader>
-      <Nav variants={headerAnimate} initial="hide" animate="show">
+      <StyledNav variants={headerAnimate} initial="hide" animate="show">
         <Logo />
         <ThemeToggle />
         <MenuBar className={mobileOpen && "active"} onClick={mobileNavHandler}>
@@ -23,7 +28,8 @@ const Header = () => {
           <span></span>
           <span></span>
         </MenuBar>
-      </Nav>
+        {mobileOpen && (<Nav/>)}
+      </StyledNav>
     </StyledHeader>
   );
 };
@@ -43,7 +49,7 @@ const StyledHeader = styled.header`
   
 `;
 
-const Nav = styled(motion.nav)`
+const StyledNav = styled(motion.nav)`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -56,7 +62,7 @@ const Nav = styled(motion.nav)`
 `;
 
 const MenuBar = styled.div`
-  z-index: 200;
+  z-index: 50;
   cursor: pointer;
   transition: all 0.3s linear;
   span {
