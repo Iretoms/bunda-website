@@ -99,7 +99,12 @@ const StyledNav = styled(motion.nav)`
 
 const Container = styled.div`
   min-height: 60vh;
+  padding-left: 1rem;
   width: 50%;
+
+  @media screen and (max-width: 40rem) {
+    width: 100%;
+  }
 `;
 
 const NavList = styled(motion.ul)`
