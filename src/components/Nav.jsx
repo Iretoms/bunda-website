@@ -4,13 +4,17 @@ import { useLocation, Link } from "react-router-dom";
 import { FaAngleDown } from "react-icons/fa";
 import { motion } from "framer-motion";
 
-const Nav = () => {
+const Nav = ({mobileOpen, setMobileOpen}) => {
   const location = useLocation();
   const [show, setShow] = useState(false);
 
   const onShow = () => {
     setShow(!show);
   };
+
+  const clickHandler = () => {
+    setMobileOpen(false)
+  }
 
   const mobileAnimation = {
     hidden: {
@@ -37,16 +41,24 @@ const Nav = () => {
       <Container>
         <NavList>
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/" onClick={clickHandler}>
+              Home
+            </Link>
           </li>
           <li>
-            <a href="#about">About Us</a>
+            <a href="#about" onClick={clickHandler}>
+              About Us
+            </a>
           </li>
           <li>
-            <a href="#testimonials">Testimonials</a>
+            <a href="#testimonials" onClick={clickHandler}>
+              Testimonials
+            </a>
           </li>
           <li>
-            <a href="#contact">Contact Us</a>
+            <a href="#contact" onClick={clickHandler}>
+              Contact Us
+            </a>
           </li>
           <li className={show ? "services show" : "services"} onClick={onShow}>
             <div>
@@ -58,6 +70,7 @@ const Nav = () => {
                 <li>
                   <Link
                     to="/"
+                    onClick={clickHandler}
                     className={location.pathname === "/" && "active"}
                   >
                     Brand Management
@@ -66,6 +79,7 @@ const Nav = () => {
                 <li>
                   <Link
                     to="/software-development"
+                    onClick={clickHandler}
                     className={
                       location.pathname === "/software-development" && "active"
                     }

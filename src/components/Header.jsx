@@ -28,7 +28,7 @@ const Header = () => {
           <span></span>
           <span></span>
         </MenuBar>
-        <AnimatePresence>{mobileOpen && (<Nav/>)}</AnimatePresence>
+        <AnimatePresence>{mobileOpen && (<Nav setMobileOpen={setMobileOpen}/>)}</AnimatePresence>
       </StyledNav>
     </StyledHeader>
   );
