@@ -12,7 +12,9 @@ const Footer = () => {
 };
 
 const StyledFooter = styled.footer`
-
+width: 100%;
+min-height: 88vh;
+background-color: ${props => props.theme.blue};
 `
 
 const Container = styled.div`
