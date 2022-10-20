@@ -116,7 +116,7 @@ const Container = styled.div`
   .cards {
     width: 100%;
     display: flex;
-    gap: 3.2%;
+    gap: 1.5rem;
     div {
         width: 100%;
     }
