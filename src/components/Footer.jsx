@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
 
 const Footer = () => {
     return (
@@ -13,7 +13,7 @@ const Footer = () => {
 
 const StyledFooter = styled.footer`
 width: 100%;
-min-height: 88vh;
+min-height: 60vh;
 background-color: ${props => props.theme.blue};
 `
 
