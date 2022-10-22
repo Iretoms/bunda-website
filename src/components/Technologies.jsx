@@ -135,6 +135,11 @@ const Container = styled.div`
     .head {
       font-size: 2rem;
     }
+
+    .technologies {
+        gap: 4rem;
+        padding-left: 1.5rem;
+    }
   }
 `;
 
