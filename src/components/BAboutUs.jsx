@@ -23,7 +23,7 @@ const BAboutUs = () => {
             initial="hide"
             whileInView={"show"}
             viewport={{ once: true, amount: 0.5 }}
-            transition={{ staggerChildren: 0.5 }}
+            transition={{ staggerChildren: 0.3 }}
           >
             <motion.article variants={textAnimate}>
               <h2>Who We Are</h2>

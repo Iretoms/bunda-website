@@ -21,7 +21,6 @@ const Technologies = () => {
             initial="hide"
             whileInView={"show"}
             viewport={{ once: true, amount: 0.5 }}
-            transition={{ staggerChildren: 0.5 }}
           >
             <motion.h1 variants={textAnimate} className="head">Technologies</motion.h1>
           </motion.div>
@@ -29,72 +28,63 @@ const Technologies = () => {
             <motion.article
               initial="hide"
               whileInView={"show"}
-              viewport={{ once: true, amount: 0.5 }}
-              transition={{ staggerChildren: 0.5 }}
+              viewport={{ once: true, amount: 1 }}
             >
               <Technology image={adobeXd} caption="Adobe Xd" />
             </motion.article>
             <motion.article
               initial="hide"
               whileInView={"show"}
-              viewport={{ once: true, amount: 0.5 }}
-              transition={{ staggerChildren: 0.5 }}
+              viewport={{ once: true, amount: 1 }}
             >
               <Technology image={figma} caption="Figma" />
             </motion.article>
             <motion.article
               initial="hide"
               whileInView={"show"}
-              viewport={{ once: true, amount: 0.5 }}
-              transition={{ staggerChildren: 0.5 }}
+              viewport={{ once: true, amount: 1 }}
             >
               <Technology image={sketch} caption="Sketch" />
             </motion.article>
             <motion.article
               initial="hide"
               whileInView={"show"}
-              viewport={{ once: true, amount: 0.5 }}
-              transition={{ staggerChildren: 0.5 }}
+              viewport={{ once: true, amount: 1 }}
             >
               <Technology image={html} caption="HTML" />
             </motion.article>
             <motion.article
               initial="hide"
               whileInView={"show"}
-              viewport={{ once: true, amount: 0.5 }}
-              transition={{ staggerChildren: 0.5 }}
+              viewport={{ once: true, amount: 1 }}
             >
               <Technology image={css} caption="CSS" />
             </motion.article>
             <motion.article
               initial="hide"
               whileInView={"show"}
-              viewport={{ once: true, amount: 0.5 }}
-              transition={{ staggerChildren: 0.5 }}
+              viewport={{ once: true, amount: 1 }}
             >
               <Technology image={javascript} caption="Javascript" />
             </motion.article>
             <motion.article
               initial="hide"
               whileInView={"show"}
-              viewport={{ once: true, amount: 0.5 }}
-              transition={{ staggerChildren: 0.5 }}
+              viewport={{ once: true, amount: 1 }}
             >
               <Technology image={react} caption="ReactJs" />
             </motion.article>
             <motion.article
               initial="hide"
               whileInView={"show"}
-              viewport={{ once: true, amount: 0.5 }}
-              transition={{ staggerChildren: 0.5 }}
+              viewport={{ once: true, amount: 1 }}
             >
               <Technology image={nodejs} caption="NodeJs" />
             </motion.article>
             <motion.article
               initial="hide"
               whileInView={"show"}
-              viewport={{ once: true, amount: 0.5 }}
-              transition={{ staggerChildren: 0.5 }}
+              viewport={{ once: true, amount: 1 }}
             >
               <Technology image={devops} caption="Devops" />
             </motion.article>
