@@ -63,7 +63,7 @@ const Section = styled.section`
 const Container = styled.div`
   width: 87%;
   margin: 0 auto;
-  padding: 2rem 0;
+  padding: 2rem 0 4rem;
   .head {
     text-align: center;
     color: ${(props) => props.theme.text1};

@@ -62,7 +62,7 @@ const Nav = ({mobileOpen, setMobileOpen}) => {
           </li>
           <li className={show ? "services show" : "services"} onClick={onShow}>
             <div>
-              <p>Services</p>
+              <p>Fields</p>
               <FaAngleDown />
             </div>
             <div className="servicesList">
