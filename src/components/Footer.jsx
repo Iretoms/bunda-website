@@ -4,51 +4,87 @@ import { AiOutlineInstagram, AiFillLinkedin } from "react-icons/ai";
 import { FaEnvelope } from "react-icons/fa";
 import logo from "../assets/png/logo.png";
 import { motion } from "framer-motion";
+import { textAnimate } from "../animation";
 
 const Footer = () => {
     const location = useLocation()
   return (
     <StyledFooter>
       <Container>
-        <motion.div className="logo">
-          <img src={logo} alt="logo" />
+        <motion.div
+          className="logo"
+          initial="hide"
+          whileInView={"show"}
+          viewport={{ once: true, amount: 1 }}
+          transition={{ staggerChildren: 0.8 }}
+        >
+          <motion.img variants={textAnimate} src={logo} alt="logo" />
         </motion.div>
-        <div>
-          <p>Where visibility matters, Think Bunda.</p>
-        </div>
-        <div className="description">
-          <p>
+        <motion.div
+          initial="hide"
+          whileInView={"show"}
+          viewport={{ once: true, amount: 1 }}
+          transition={{ staggerChildren: 0.8 }}
+        >
+          <motion.p variants={textAnimate}>
+            Where visibility matters, Think Bunda.
+          </motion.p>
+        </motion.div>
+        <motion.div
+          className="description"
+          initial="hide"
+          whileInView={"show"}
+          viewport={{ once: true, amount: 1 }}
+          transition={{ staggerChildren: 0.2 }}
+        >
+          <motion.p variants={textAnimate}>
             {location.pathname === "/"
               ? "Need tailored advice for conversion increase, audience engagement boost, product and services promotion for maximal profit? Holla!"
               : "Are you looking to build a stunning landing page or full web applications for your company or as an individual project? then feel free to contact us, we are here to make your imaginations come true."}
-          </p>
-        </div>
-        <div className="socialLinks">
-          <a
+          </motion.p>
+        </motion.div>
+        <motion.div
+          className="socialLinks"
+          initial="hide"
+          whileInView={"show"}
+          viewport={{ once: true, amount: 1 }}
+          transition={{ staggerChildren: 0.2 }}
+        >
+          <motion.a
+            variants={textAnimate}
             href="https://www.instagram.com/bundaktensolutions_"
             target="_blank"
             rel="noopener noreferrer"
           >
             <AiOutlineInstagram fill="#fff" size="1.5rem" />
-          </a>
-          <a
+          </motion.a>
+          <motion.a
+            variants={textAnimate}
             href="https://www.linkedin.com/company/bundaktensolutions"
             target="_blank"
             rel="noopener noreferrer"
           >
             <AiFillLinkedin fill="#fff" size="1.5rem" />
-          </a>
-          <a
+          </motion.a>
+          <motion.a
+            variants={textAnimate}
             href="mailto:info.bundakten.com"
             target="_blank"
             rel="noopener noreferrer"
           >
             <FaEnvelope fill="#fff" size="1.5rem" />
-          </a>
-        </div>
-        <div>
-          <p>&copy; 2022 Bunda Digital Solutions</p>
-        </div>
+          </motion.a>
+        </motion.div>
+        <motion.div
+          initial="hide"
+          whileInView={"show"}
+          viewport={{ once: true, amount: 1 }}
+          transition={{ staggerChildren: 0.8 }}
+        >
+          <motion.p variants={textAnimate}>
+            &copy; 2022 Bunda Digital Solutions
+          </motion.p>
+        </motion.div>
       </Container>
     </StyledFooter>
   );
