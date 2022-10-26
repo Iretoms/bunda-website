@@ -20,7 +20,6 @@ const Testimony = () => {
           initial="hide"
           whileInView={"show"}
           viewport={{ once: true, amount: 0.5 }}
-          transition={{ staggerChildren: 0.5 }}
         >
           <motion.h1 variants={textAnimate} className="head">
             Testimonials
@@ -30,7 +29,6 @@ const Testimony = () => {
           initial="hide"
           whileInView={"show"}
           viewport={{ once: true, amount: 0.5 }}
-          transition={{ staggerChildren: 0.5 }}
         >
           <Swiper
             modules={[Navigation, Pagination, Scrollbar, A11y]}
