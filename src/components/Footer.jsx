@@ -2,7 +2,7 @@ import styled from "styled-components";
 import {useLocation} from "react-router-dom";
 import { AiOutlineInstagram, AiFillLinkedin } from "react-icons/ai";
 import { FaEnvelope } from "react-icons/fa";
-import logo from "../assets/png/logo.png";
+import logoWhite from "../assets/png/logoWhite.png";
 import { motion } from "framer-motion";
 import { textAnimate } from "../animation";
 
@@ -18,7 +18,7 @@ const Footer = () => {
           viewport={{ once: true, amount: 1 }}
           transition={{ staggerChildren: 0.8 }}
         >
-          <motion.img variants={textAnimate} src={logo} alt="logo" />
+          <motion.img variants={textAnimate} src={logoWhite} alt="logo" />
         </motion.div>
         <motion.div
           initial="hide"

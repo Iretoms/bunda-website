@@ -17,12 +17,20 @@ const Figure = styled(motion.figure)`
   img {
     width: 100%;
     height: 4rem;
+    transform: scale(1);
+    transition: transform 0.3s linear;
   }
 
   figcaption {
     margin-top: 0.5rem;
     color: ${(props) => props.theme.text3};
     font-weight: 500;
+  }
+
+  &:hover {
+    img {
+      transform: scale(1.2);
+    }
   }
 `;
 
