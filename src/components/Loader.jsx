@@ -44,6 +44,13 @@ const StyledLogo = styled(motion.div)`
       height: 100%;
     }
   }
+
+  @media screen and (max-width: 40rem) {
+    .logo-image {
+        margin-left: 4rem;
+        width: 10rem;
+    }
+  }
 `;
 
 export default Loader;
