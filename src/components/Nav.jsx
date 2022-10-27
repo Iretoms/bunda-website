@@ -4,7 +4,7 @@ import { useLocation, Link } from "react-router-dom";
 import { FaAngleDown } from "react-icons/fa";
 import { motion } from "framer-motion";
 
-const Nav = ({mobileOpen, setMobileOpen}) => {
+const Nav = ({ setMobileOpen }) => {
   const location = useLocation();
   const [show, setShow] = useState(false);
 
@@ -13,8 +13,8 @@ const Nav = ({mobileOpen, setMobileOpen}) => {
   };
 
   const clickHandler = () => {
-    setMobileOpen(false)
-  }
+    setMobileOpen(false);
+  };
 
   const mobileAnimation = {
     hidden: {
@@ -31,6 +31,20 @@ const Nav = ({mobileOpen, setMobileOpen}) => {
     exit: { opacity: 0, x: 100 },
   };
 
+  const navAnimation = {
+    hidden: {
+      x: -50,
+    },
+    show: {
+      x: 0,
+      transition: {
+        type: "spring",
+        bounce: 0.5,
+        duration: 0.3,
+      },
+    },
+  };
+
   return (
     <StyledNav
       variants={mobileAnimation}
@@ -39,28 +53,36 @@ const Nav = ({mobileOpen, setMobileOpen}) => {
       exit="exit"
     >
       <Container>
-        <NavList>
-          <li>
+        <NavList
+          initial="hide"
+          animate="show"
+          transition={{ staggerChildren: 0.2 }}
+        >
+          <motion.li variants={navAnimation}>
             <Link to="/" onClick={clickHandler}>
               Home
             </Link>
-          </li>
-          <li>
+          </motion.li>
+          <motion.li variants={navAnimation}>
             <a href="#about" onClick={clickHandler}>
               About Us
             </a>
-          </li>
-          <li>
+          </motion.li>
+          <motion.li variants={navAnimation}>
             <a href="#testimonials" onClick={clickHandler}>
               Testimonials
             </a>
-          </li>
-          <li>
+          </motion.li>
+          <motion.li variants={navAnimation}>
             <a href="#contact" onClick={clickHandler}>
               Contact Us
             </a>
-          </li>
-          <li className={show ? "services show" : "services"} onClick={onShow}>
+          </motion.li>
+          <motion.li
+            variants={navAnimation}
+            className={show ? "services show" : "services"}
+            onClick={onShow}
+          >
             <div>
               <p>Fields</p>
               <FaAngleDown />
@@ -89,7 +111,7 @@ const Nav = ({mobileOpen, setMobileOpen}) => {
                 </li>
               </ul>
             </div>
-          </li>
+          </motion.li>
         </NavList>
       </Container>
     </StyledNav>
