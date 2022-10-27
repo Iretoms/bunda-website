@@ -52,7 +52,7 @@ const Footer = () => {
         >
           <motion.a
             variants={textAnimate}
-            href="https://www.instagram.com/bundaktensolutions_"
+            href="https://www.instagram.com/bundak_10/"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -60,7 +60,7 @@ const Footer = () => {
           </motion.a>
           <motion.a
             variants={textAnimate}
-            href="https://www.linkedin.com/company/bundaktensolutions"
+            href="https://www.linkedin.com/company/bundakten-solutons/"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -68,7 +68,7 @@ const Footer = () => {
           </motion.a>
           <motion.a
             variants={textAnimate}
-            href="mailto:info.bundakten.com"
+            href="mailto:info@bundakten.com"
             target="_blank"
             rel="noopener noreferrer"
           >
