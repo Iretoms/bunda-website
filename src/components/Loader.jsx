@@ -37,8 +37,8 @@ const StyledLogo = styled(motion.div)`
   display: flex;
   align-items: center;
   .logo-image {
-    width: 11rem;
-    height: 7rem;
+    width: 10rem;
+    height: 6rem;
     img {
       width: 100%;
       height: 100%;
