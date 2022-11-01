@@ -31,20 +31,6 @@ const Nav = ({ setMobileOpen }) => {
     exit: { opacity: 0, x: 100 },
   };
 
-  const navAnimation = {
-    hidden: {
-      x: -50,
-    },
-    show: {
-      x: 0,
-      transition: {
-        type: "spring",
-        bounce: 0.5,
-        duration: 0.3,
-      },
-    },
-  };
-
   return (
     <StyledNav
       variants={mobileAnimation}
@@ -58,36 +44,35 @@ const Nav = ({ setMobileOpen }) => {
           animate="show"
           transition={{ staggerChildren: 0.2 }}
         >
-          <motion.li variants={navAnimation}>
+          <li>
             <Link to="/" onClick={clickHandler}>
               Home
             </Link>
-          </motion.li>
-          <motion.li variants={navAnimation}>
+          </li>
+          <li>
             <a href="#about" onClick={clickHandler}>
               About Us
             </a>
-          </motion.li>
-          <motion.li variants={navAnimation}>
+          </li>
+          <li>
             <a href="#testimonials" onClick={clickHandler}>
               Testimonials
             </a>
-          </motion.li>
-          <motion.li variants={navAnimation}>
+          </li>
+          <li>
             <a href="#contact" onClick={clickHandler}>
               Contact Us
             </a>
-          </motion.li>
-          <motion.li
-            variants={navAnimation}
-            className={show ? "services show" : "services"}
+          </li>
+          <li
+            className={show ? "fields show" : "fields"}
             onClick={onShow}
           >
             <div>
               <p>Fields</p>
               <FaAngleDown />
             </div>
-            <div className="servicesList">
+            <div className="fieldsList">
               <ul>
                 <li>
                   <Link
@@ -111,7 +96,7 @@ const Nav = ({ setMobileOpen }) => {
                 </li>
               </ul>
             </div>
-          </motion.li>
+          </li>
         </NavList>
       </Container>
     </StyledNav>
@@ -159,7 +144,7 @@ const NavList = styled(motion.ul)`
     }
   }
 
-  .services {
+  .fields {
     cursor: pointer;
     div {
       display: flex;
@@ -171,7 +156,7 @@ const NavList = styled(motion.ul)`
       }
     }
 
-    .servicesList {
+    .fieldsList {
       margin-left: 1rem;
       margin-top: 0.5rem;
       overflow: hidden;
@@ -191,7 +176,7 @@ const NavList = styled(motion.ul)`
         }
       }
 
-      .servicesList {
+      .fieldsList {
         ul {
           transform: translateY(0);
         }
@@ -199,7 +184,7 @@ const NavList = styled(motion.ul)`
     }
   }
 
-  .servicesList {
+  .fieldsList {
     li {
       a {
         &.active {
