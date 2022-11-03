@@ -82,7 +82,7 @@ const Footer = () => {
           transition={{ staggerChildren: 0.8 }}
         >
           <motion.p variants={textAnimate}>
-            &copy; 2022 Bunda Digital Solutions
+            &copy; 2022 Bunda
           </motion.p>
         </motion.div>
       </Container>
