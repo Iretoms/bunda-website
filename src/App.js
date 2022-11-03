@@ -7,6 +7,7 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import SoftDev from "./pages/SoftDev";
 import Loader from "./components/Loader";
+import ScrollTop from "./components/ScrollTop";
 
 function App() {
   const [loader, setLoader] = useState(true);
@@ -19,6 +20,7 @@ function App() {
   return (
     <div className="App">
       <GlobalStyles />
+      <ScrollTop/>
       <ThemeProvide>
         {loader ? (
           <Loader />

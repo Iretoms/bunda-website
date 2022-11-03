@@ -1,8 +1,12 @@
+import { useRef } from "react";
+// import emailjs from "emailjs-com";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import { textAnimate } from "../animation";
 
 const ContactUs = () => {
+  const formRef = useRef();
+
   const onSubmit = (e) => {
     e.preventDefault();
   };
@@ -26,7 +30,7 @@ const ContactUs = () => {
           viewport={{ once: true, amount: 0.5 }}
           transition={{ staggerChildren: 0.5 }}
         >
-          <motion.form variants={textAnimate} onSubmit={onSubmit}>
+          <motion.form variants={textAnimate} onSubmit={onSubmit} ref={formRef}>
             <div className="form-control name">
               <label htmlFor="name">Name</label>
               <input type="text" name="name" required />
