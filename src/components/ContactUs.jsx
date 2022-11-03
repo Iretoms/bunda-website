@@ -1,5 +1,5 @@
 import { useRef } from "react";
-// import emailjs from "emailjs-com";
+import emailjs from "emailjs-com";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import { textAnimate } from "../animation";
@@ -9,6 +9,14 @@ const ContactUs = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
+    emailjs.sendForm(
+      "service_vfjyd7o",
+      "template_urwtdvk",
+      formRef.current,
+      "wW-4RCOHqwPVE7KPO"
+    );
+
+    e.target.reset();
   };
 
   return (
@@ -37,7 +45,7 @@ const ContactUs = () => {
             </div>
             <div className="form-control email">
               <label htmlFor="email">Email</label>
-              <input type="email" name="name" required />
+              <input type="email" name="email" required />
             </div>
             <div className="form-control message">
               <label htmlFor="message">Message</label>
