@@ -29,7 +29,7 @@ const ContactUs = () => {
           transition={{ staggerChildren: 0.5 }}
         >
           <motion.h1 variants={textAnimate} className="head">
-            Contact Us
+            Got a business? Get in talk with us
           </motion.h1>
         </motion.div>
         <FormContainer

@@ -19,12 +19,12 @@ const SAboutUs = () => {
             About Us
           </motion.h1>
           <motion.p variants={textAnimate} className="subhead">
-            We offer Digital Marketing, Design, Web and Mobile Development
-            services for all types of companies and business. our professional
-            team utilizes the latest cutting edge technology in digital
-            solutions. Our goal is to help your business grow through an
+            Bundakten offers Digital Marketing, Design, Web and Mobile
+            Development services for all types of companies and business. our
+            professional team utilizes the latest advance technology in digital
+            solutions. The goal remains to help your business grow through an
             effective, and affordable digital solution. Here at Bundakten, the
-            sky is not the limit, contact us lets take you far beyond.
+            sky is not the limit, contact us let's take you far beyond.
           </motion.p>
         </motion.div>
         <Cards>
@@ -38,7 +38,7 @@ const SAboutUs = () => {
               <div className="digitalMarketing">
                 <img src={digitalMarketing} alt="digitalMarketing" />
               </div>
-              <h3>Digital Marketing</h3>
+              <h3>Digital Marketing services</h3>
               <p>
                 At Bundakten, we offer data-driven and return on investment
                 digital marketing services. Our professional digital marketers
@@ -79,14 +79,14 @@ const SAboutUs = () => {
               <div className="design">
                 <img src={design} alt="design" />
               </div>
-              <h3>Design</h3>
+              <h3>UI/UX & Graphic Design</h3>
               <p>
                 We are an agency that specializes in designing websites and
                 mobile apps that automatically attracts the target audience of
-                your business. Our professional design team includes user
-                experience and conversion rate optimization specialists who can
-                create magnificent websites that not only look good but are easy
-                to use for both you and your website visitors.
+                your business. We are known for serving businesses with
+                user-centric design with a combination of simplified and
+                enticing visuals that not only look good but are easy too use
+                for both you and your website visitors.
               </p>
             </Card>
           </motion.div>
@@ -129,7 +129,7 @@ const Container = styled.div`
     }
 
     .subhead {
-        font-size: 1rem;
+      font-size: 1rem;
     }
   }
 `;
