@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import SoftDev from "./pages/SoftDev";
 import Loader from "./components/Loader";
 import ScrollTop from "./components/ScrollTop";
+import Entrepreneur from "./pages/Entrepreneur";
 
 function App() {
   const [loader, setLoader] = useState(true);
@@ -29,7 +30,8 @@ function App() {
             <Header />
             <main>
               <Routes>
-                <Route path="/" element={<Home />} />
+                <Route path="/" element={<Entrepreneur/>} />
+                <Route path="/brand" element={<Home />} />
                 <Route path="/software-development" element={<SoftDev />} />
               </Routes>
             </main>

@@ -46,7 +46,6 @@ const StyledHeader = styled.header`
   border-bottom: ${(props) => props.theme.BB};
   background-color: ${(props) => props.theme.primaryBg};
   transition: background-color 0.3s ease-out;
-  
 `;
 
 const StyledNav = styled(motion.nav)`

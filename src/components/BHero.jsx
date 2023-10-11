@@ -15,12 +15,12 @@ const BHero = () => {
           transition={{ staggerChildren: 0.5 }}
         >
           <motion.h1 variants={textAnimate} className="hero_title">
-            {location.pathname === "/"
+            {location.pathname === "/brand"
               ? "Brand Management, Media Buying, Talent Booking and so much more."
               : "Digital Marketing, Design, Web and Mobile Development Services."}
           </motion.h1>
           <motion.p variants={textAnimate} className="hero_subtitle">
-            {location.pathname === "/"
+            {location.pathname === "/brand"
               ? "Bunda is a foremost management consultancy specializing event management and activations, brand management and production."
               : "Bundakten, The place where your exploration ends and expertise begins."}
           </motion.p>

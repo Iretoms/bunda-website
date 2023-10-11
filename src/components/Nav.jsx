@@ -76,9 +76,9 @@ const Nav = ({ setMobileOpen }) => {
               <ul>
                 <li>
                   <Link
-                    to="/"
+                    to="/brand"
                     onClick={clickHandler}
-                    className={location.pathname === "/" && "active"}
+                    className={location.pathname === "/brand" && "active"}
                   >
                     Brand Management
                   </Link>
