@@ -4,6 +4,7 @@ import SAboutUs from "../components/SAboutUs";
 import Technologies from "../components/Technologies";
 import Testimony from "../components/Testimony";
 import Works from "../components/Works";
+import Footer from "../components/Footer";
 
 const SoftDev = () => {
     return (
@@ -14,6 +15,7 @@ const SoftDev = () => {
            <Works/>
            <Testimony/>
            <ContactUs/>
+           <Footer/>
         </>
     );
 };

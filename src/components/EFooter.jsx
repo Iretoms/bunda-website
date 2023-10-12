@@ -1,46 +1,36 @@
 import styled from "styled-components";
-import {useLocation} from "react-router-dom";
 import { AiOutlineInstagram, AiFillLinkedin } from "react-icons/ai";
 import { FaEnvelope } from "react-icons/fa";
 import logoWhite from "../assets/png/logoWhite.png";
 import { motion } from "framer-motion";
 import { textAnimate } from "../animation";
 
-const Footer = () => {
-    const location = useLocation()
+const EFooter = () => {
   return (
     <StyledFooter>
       <Container>
         <motion.div
-          className="logo"
-          initial="hide"
-          whileInView={"show"}
-          viewport={{ once: true, amount: 1 }}
-          transition={{ staggerChildren: 0.8 }}
-        >
-          <motion.img variants={textAnimate} src={logoWhite} alt="logo" />
-        </motion.div>
-        <motion.div
-          initial="hide"
-          whileInView={"show"}
-          viewport={{ once: true, amount: 1 }}
-          transition={{ staggerChildren: 0.8 }}
-        >
-          <motion.p variants={textAnimate}>
-            Where visibility matters, Think Bunda.
-          </motion.p>
-        </motion.div>
-        <motion.div
           className="description"
           initial="hide"
           whileInView={"show"}
-          viewport={{ once: true, amount: 1 }}
-          transition={{ staggerChildren: 0.2 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ staggerChildren: 0.8 }}
         >
-          <motion.p variants={textAnimate}>
-            {location.pathname === "/brand"
-              ? "Need tailored advice for conversion increase, audience engagement boost, product and services promotion for maximal profit? Holla!"
-              : "Are you looking to build a stunning landing page or full web applications for your company or as an individual project? then feel free to contact us, we are here to make your imaginations come true."}
+          <div className="logo">
+            <motion.img variants={textAnimate} src={logoWhite} alt="logo" />
+          </div>
+          <motion.p>
+            Craft a captivating cover letter or pitch deck that showcases your
+            business idea's potential. For a norminal one-time fee of $X, we'll
+            present your ideas to our panel of experts, professionals and angel
+            investors.
+          </motion.p>
+          <motion.p>
+            Successful candidates could secure up to $30,000 in seed funding,
+            regardless of your industry - whether you are into tech, content
+            creation, music, fashion design or everyday goods and services. This
+            is your opportunity to supercharge your business and take your brand
+            to the world.
           </motion.p>
         </motion.div>
         <motion.div
@@ -81,7 +71,7 @@ const Footer = () => {
           viewport={{ once: true, amount: 1 }}
           transition={{ staggerChildren: 0.8 }}
         >
-          <motion.p variants={textAnimate}>
+          <motion.p variants={textAnimate} className="copyright">
             Copyright &copy; 2023 Bunda
           </motion.p>
         </motion.div>
@@ -99,35 +89,46 @@ const StyledFooter = styled.footer`
 const Container = styled.div`
   width: 87%;
   margin: 0 auto;
-  padding: 5rem 0 ;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  padding: 5rem 0;
   color: #fff;
 
   p {
     font-weight: 500;
   }
 
-  .logo {
-    width: 9rem;
-    margin-bottom: 1rem;
-    img {
+  .description {
+    text-align: center;
+    .logo {
+      width: 9rem;
+      margin: 0 auto 1rem;
+      img {
         width: 100%;
+      }
+    }
+    p {
+      width: 85%;
+      margin: 0 auto 2rem;
     }
   }
 
-  .description {
-    margin-top: 1rem;
-    text-align: center;
-  }
-
   .socialLinks {
-    margin: 2rem 0 4rem;
+    margin: 3.5rem auto 4rem;
     width: 8rem;
     display: flex;
     justify-content: space-between;
   }
+
+  .copyright {
+    text-align: center;
+  }
+
+  @media screen and (max-width: 40rem) {
+    .description {
+      p {
+        width: 100%;
+      }
+    }
+  }
 `;
 
-export default Footer;
+export default EFooter;

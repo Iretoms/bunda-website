@@ -1,10 +1,10 @@
-import {DefaultPlayer as Video} from "react-html5video"
-import "react-html5video/dist/styles.css"
+import { DefaultPlayer as Video } from "react-html5video";
+import "react-html5video/dist/styles.css";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import { textAnimate } from "../animation";
-import introVid from "../assets/mp4/introVid.MP4"
-import placeholderPic from "../assets/png/placeholderPic.png"
+import introVid from "../assets/mp4/introVid.mp4";
+import placeholderPic from "../assets/png/placeholderPic.png";
 
 const EHero = () => {
   return (
@@ -26,8 +26,8 @@ const EHero = () => {
           </motion.p>
         </Text>
         <StyledVideo variants={textAnimate}>
-          <Video poster={placeholderPic} controls={['PlayPause']}>
-            <source src={introVid} type="video/mp4"/>
+          <Video poster={placeholderPic} controls={["PlayPause"]}>
+            <source src={introVid} type="video/mp4" />
           </Video>
         </StyledVideo>
       </div>
@@ -47,10 +47,10 @@ const Section = styled.section`
     padding: 5rem 0;
   }
 
-   @media screen and (max-width: 40rem) {
+  @media screen and (max-width: 40rem) {
     min-height: 85vh;
     .container {
-        padding: 3.5rem 0;
+      padding: 3.5rem 0;
     }
   }
 `;
@@ -67,6 +67,7 @@ const Text = styled(motion.article)`
   .hero_subtitle {
     color: ${(props) => props.theme.text2};
     font-size: 1.2rem;
+    font-weight: 500;
     width: 80%;
     margin: 0 auto 2rem;
     line-height: 2.4rem;
