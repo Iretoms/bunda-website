@@ -1,5 +1,5 @@
-import { DefaultPlayer as Video } from "react-html5video";
-import "react-html5video/dist/styles.css";
+// import { DefaultPlayer as Video } from "react-html5video";
+// import "react-html5video/dist/styles.css";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import { textAnimate } from "../animation";
@@ -86,12 +86,12 @@ const Text = styled(motion.article)`
   }
 `;
 
-const StyledVideo = styled(motion.article)`
-  width: 85%;
-  margin: 0 auto;
-  @media screen and (max-width: 40rem) {
-    width: 98%;
-  }
-`;
+// const StyledVideo = styled(motion.article)`
+//   width: 85%;
+//   margin: 0 auto;
+//   @media screen and (max-width: 40rem) {
+//     width: 98%;
+//   }
+// `;
 
 export default EHero;
