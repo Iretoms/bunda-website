@@ -3,8 +3,8 @@ import "react-html5video/dist/styles.css";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import { textAnimate } from "../animation";
-import introVid from "../assets/mp4/introVid.mp4";
-import placeholderPic from "../assets/png/placeholderPic.png";
+// import introVid from "../assets/mp4/introVid.mp4";
+// import placeholderPic from "../assets/png/placeholderPic.png";
 
 const EHero = () => {
   return (
@@ -25,11 +25,11 @@ const EHero = () => {
             awaits you on this exciting journey.
           </motion.p>
         </Text>
-        <StyledVideo variants={textAnimate}>
+        {/* <StyledVideo>
           <Video poster={placeholderPic} controls={["PlayPause"]}>
             <source src={introVid} type="video/mp4" />
           </Video>
-        </StyledVideo>
+        </StyledVideo> */}
       </div>
     </Section>
   );
