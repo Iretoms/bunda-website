@@ -19,13 +19,13 @@ const EFooter = () => {
           <div className="logo">
             <motion.img variants={textAnimate} src={logoWhite} alt="logo" />
           </div>
-          <motion.p>
+          <motion.p variants={textAnimate}>
             Craft a captivating cover letter or pitch deck that showcases your
             business idea's potential. For a norminal one-time fee of $X, we'll
             present your ideas to our panel of experts, professionals and angel
             investors.
           </motion.p>
-          <motion.p>
+          <motion.p variants={textAnimate}>
             Successful candidates could secure up to $30,000 in seed funding,
             regardless of your industry - whether you are into tech, content
             creation, music, fashion design or everyday goods and services. This
