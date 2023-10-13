@@ -1,5 +1,6 @@
 import { DefaultPlayer as Video } from "react-html5video";
 import "react-html5video/dist/styles.css";
+import {Link} from "react-router-dom";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import { textAnimate } from "../animation";
@@ -30,6 +31,11 @@ const EHero = () => {
             <source src={introVideo} type="video/mp4" />
           </Video>
         </StyledVideo>
+        <div className="hero_cta--container">
+          <Link to="/" className="hero_cta--button">
+            Get Started
+          </Link>
+        </div>
       </div>
     </Section>
   );
@@ -45,10 +51,24 @@ const Section = styled.section`
     width: 87%;
     margin: 0 auto;
     padding: 5rem 0;
+    .hero_cta--container {
+      text-align: center;
+      margin-top: 4rem;
+      .hero_cta--button {
+        cursor: pointer;
+        font-size: 1.1rem;
+        font-weight: 500;
+        background-color: ${(props) => props.theme.blue};
+        padding: 1rem 2.1rem;
+        border: none;
+        border-radius: 10px;
+        color: #fff;
+      }
+    }
   }
 
   @media screen and (max-width: 40rem) {
-    min-height: 85vh;
+    min-height: 60vh;
     .container {
       padding: 3.5rem 0;
     }
