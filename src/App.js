@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import GlobalStyles from "./style/GlobalStyles";
 import ThemeProvide from "./context/ThemeContext";
 import Header from "./components/Header";
@@ -8,6 +10,11 @@ import SoftDev from "./pages/SoftDev";
 import Loader from "./components/Loader";
 import ScrollTop from "./components/ScrollTop";
 import Entrepreneur from "./pages/Entrepreneur";
+import GetStarted from "./pages/GetStarted";
+import SignIn from "./pages/SignIn";
+import SignUp from "./pages/SignUp";
+import ForgotPassword from "./pages/ForgotPassword";
+
 
 function App() {
   const [loader, setLoader] = useState(true);
@@ -20,7 +27,7 @@ function App() {
   return (
     <div className="App">
       <GlobalStyles />
-      <ScrollTop/>
+      <ScrollTop />
       <ThemeProvide>
         {loader ? (
           <Loader />
@@ -29,10 +36,15 @@ function App() {
             <Header />
             <main>
               <Routes>
-                <Route path="/" element={<Entrepreneur/>} />
+                <Route path="/" element={<Entrepreneur />} />
                 <Route path="/brand" element={<Home />} />
                 <Route path="/software-development" element={<SoftDev />} />
+                <Route path="/get-started" element={<GetStarted />} />
+                <Route path="/sign-up" element={<SignUp />} />
+                <Route path="/sign-in" element={<SignIn />} />
+                <Route path="/forgot-password" element={<ForgotPassword />} />
               </Routes>
+              <ToastContainer/>
             </main>
           </>
         )}

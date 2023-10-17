@@ -21,7 +21,7 @@ const EFooter = () => {
           </div>
           <motion.p variants={textAnimate}>
             Craft a captivating cover letter or pitch deck that showcases your
-            business idea's potential. For a norminal one-time fee of $X, we'll
+            business idea's potential. For a norminal one-time fee of $40, we'll
             present your ideas to our panel of experts, professionals and angel
             investors.
           </motion.p>

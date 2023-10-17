@@ -32,7 +32,7 @@ const EHero = () => {
           </Video>
         </StyledVideo>
         <div className="hero_cta--container">
-          <Link to="/" className="hero_cta--button">
+          <Link to="/get-started" className="hero_cta--button">
             Get Started
           </Link>
         </div>
