@@ -5,6 +5,7 @@ import { BiShowAlt, BiHide } from "react-icons/bi";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { toast } from "react-toastify";
 import { Form } from "../style/Styles.js";
+import GoogleButton from "../components/GoogleButton.jsx";
 
 const SignIn = () => {
   const navigate = useNavigate();
@@ -76,6 +77,10 @@ const SignIn = () => {
               </button>
             </div>
           </form>
+          <div className="googleBtn_container">
+            <p>or</p>
+            <GoogleButton />
+          </div>
         </Form>
       </div>
     </Section>

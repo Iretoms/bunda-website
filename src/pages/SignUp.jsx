@@ -11,6 +11,7 @@ import { toast } from "react-toastify";
 import { Link, useNavigate } from "react-router-dom";
 import { BiShowAlt, BiHide } from "react-icons/bi";
 import { Form } from "../style/Styles.js";
+import GoogleButton from "../components/GoogleButton";
 
 const SignUp = () => {
   const navigate = useNavigate();
@@ -95,6 +96,10 @@ const SignUp = () => {
               </button>
             </div>
           </form>
+          <div className="googleBtn_container">
+            <p>or</p>
+            <GoogleButton />
+          </div>
         </Form>
       </div>
     </Section>

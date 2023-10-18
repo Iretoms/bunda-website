@@ -91,12 +91,26 @@ export const Form = styled.article`
     }
   }
 
+  .googleBtn_container {
+    width: 80%;
+    margin-top: 1.5rem;
+    p {
+      text-align: center;
+      font-weight: bold;
+      color: ${(props) => props.theme.text2};
+      margin-bottom: 1.5rem;
+    }
+  }
+
   @media screen and (max-width: 40rem) {
     width: 100%;
     .title {
       font-size: 1.8rem;
     }
     form {
+      width: 100%;
+    }
+    .googleBtn_container {
       width: 100%;
     }
   }

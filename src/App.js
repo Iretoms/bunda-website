@@ -14,7 +14,7 @@ import GetStarted from "./pages/GetStarted";
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
 import ForgotPassword from "./pages/ForgotPassword";
-
+import PrivateRoute from "./components/PrivateRoute";
 
 function App() {
   const [loader, setLoader] = useState(true);
@@ -39,12 +39,14 @@ function App() {
                 <Route path="/" element={<Entrepreneur />} />
                 <Route path="/brand" element={<Home />} />
                 <Route path="/software-development" element={<SoftDev />} />
-                <Route path="/get-started" element={<GetStarted />} />
+                <Route path="/get-started" element={<PrivateRoute />}>
+                  <Route path="/get-started" element={<GetStarted />} />
+                </Route>
                 <Route path="/sign-up" element={<SignUp />} />
                 <Route path="/sign-in" element={<SignIn />} />
                 <Route path="/forgot-password" element={<ForgotPassword />} />
               </Routes>
-              <ToastContainer/>
+              <ToastContainer />
             </main>
           </>
         )}
