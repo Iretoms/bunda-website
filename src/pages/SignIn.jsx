@@ -52,7 +52,7 @@ const SignIn = () => {
           <form onSubmit={onSubmit}>
             <div className="form_control">
               <label htmlFor="email">Email Address</label>
-              <input type="text" id="email" value={email} onChange={onChange} />
+              <input type="text" id="email" value={email} onChange={onChange} required />
               <p></p>
             </div>
             <div className="form_control password">
@@ -63,6 +63,7 @@ const SignIn = () => {
                   id="password"
                   value={password}
                   onChange={onChange}
+                  required
                 />
                 <button type="button" onClick={() => setShow(!show)}>
                   {eyeIcon}

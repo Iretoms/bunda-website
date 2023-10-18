@@ -54,7 +54,7 @@ const SignUp = () => {
 
       await setDoc(doc(db, "users", user.uid), formDataCopy);
 
-      navigate("/");
+      navigate("/get-started");
     } catch (error) {
       toast.error("Something went wrong, try again");
     }
@@ -67,11 +67,11 @@ const SignUp = () => {
           <form onSubmit={onSubmit}>
             <div className="form_control">
               <label htmlFor="name">Full Name</label>
-              <input type="text" id="name" value={name} onChange={onChange} />
+              <input type="text" id="name" value={name} onChange={onChange} required />
             </div>
             <div className="form_control">
               <label htmlFor="email">Email Address</label>
-              <input type="text" id="email" value={email} onChange={onChange} />
+              <input type="text" id="email" value={email} onChange={onChange} required />
               <p></p>
             </div>
             <div className="form_control password">
@@ -82,6 +82,7 @@ const SignUp = () => {
                   id="password"
                   value={password}
                   onChange={onChange}
+                  required
                 />
                 <button type="button" onClick={() => setShow(!show)}>
                   {eyeIcon}
