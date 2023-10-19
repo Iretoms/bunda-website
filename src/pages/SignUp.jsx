@@ -12,9 +12,11 @@ import { Link, useNavigate } from "react-router-dom";
 import { BiShowAlt, BiHide } from "react-icons/bi";
 import { Form } from "../style/Styles.js";
 import GoogleButton from "../components/GoogleButton";
+import Spinner from "../components/Spinner";
 
 const SignUp = () => {
   const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
   const [formData, SetFormData] = useState({
     name: "",
     email: "",
@@ -34,6 +36,7 @@ const SignUp = () => {
   const onSubmit = async (e) => {
     e.preventDefault();
     try {
+      setLoading(true);
       const auth = getAuth();
       const userCredential = await createUserWithEmailAndPassword(
         auth,
@@ -56,10 +59,13 @@ const SignUp = () => {
 
       navigate("/get-started");
     } catch (error) {
+      setLoading(false);
       toast.error("Something went wrong, try again");
     }
   };
-  return (
+  return loading ? (
+    <Spinner />
+  ) : (
     <Section>
       <div className="container">
         <Form>
@@ -67,11 +73,23 @@ const SignUp = () => {
           <form onSubmit={onSubmit}>
             <div className="form_control">
               <label htmlFor="name">Full Name</label>
-              <input type="text" id="name" value={name} onChange={onChange} required />
+              <input
+                type="text"
+                id="name"
+                value={name}
+                onChange={onChange}
+                required
+              />
             </div>
             <div className="form_control">
               <label htmlFor="email">Email Address</label>
-              <input type="text" id="email" value={email} onChange={onChange} required />
+              <input
+                type="text"
+                id="email"
+                value={email}
+                onChange={onChange}
+                required
+              />
               <p></p>
             </div>
             <div className="form_control password">
@@ -93,7 +111,7 @@ const SignUp = () => {
             </div>
             <div className="btn_container">
               <button type="submit" className="submit_btn">
-                Sign In
+                Sign Up
               </button>
             </div>
           </form>

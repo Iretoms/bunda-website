@@ -6,9 +6,11 @@ import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { toast } from "react-toastify";
 import { Form } from "../style/Styles.js";
 import GoogleButton from "../components/GoogleButton.jsx";
+import Spinner from "../components/Spinner";
 
 const SignIn = () => {
   const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
   const [formData, SetFormData] = useState({ email: "", password: "" });
   const [show, setShow] = useState(false);
   const eyeIcon = show ? <BiShowAlt /> : <BiHide />;
@@ -25,6 +27,7 @@ const SignIn = () => {
   const onSubmit = async (e) => {
     e.preventDefault();
     try {
+      setLoading(true);
       const auth = getAuth();
 
       const userCredential = await signInWithEmailAndPassword(
@@ -37,11 +40,14 @@ const SignIn = () => {
         navigate("/get-started");
       }
     } catch (error) {
+      setLoading(false);
       toast.error("Sorry you dont have an account, please Sign Up");
     }
   };
 
-  return (
+  return loading ? (
+    <Spinner />
+  ) : (
     <Section>
       <div className="container">
         <Form>
@@ -52,7 +58,13 @@ const SignIn = () => {
           <form onSubmit={onSubmit}>
             <div className="form_control">
               <label htmlFor="email">Email Address</label>
-              <input type="text" id="email" value={email} onChange={onChange} required />
+              <input
+                type="text"
+                id="email"
+                value={email}
+                onChange={onChange}
+                required
+              />
               <p></p>
             </div>
             <div className="form_control password">
