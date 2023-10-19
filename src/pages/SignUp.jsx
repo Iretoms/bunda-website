@@ -84,7 +84,7 @@ const SignUp = () => {
             <div className="form_control">
               <label htmlFor="email">Email Address</label>
               <input
-                type="text"
+                type="email"
                 id="email"
                 value={email}
                 onChange={onChange}
