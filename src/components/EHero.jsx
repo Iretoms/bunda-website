@@ -1,6 +1,6 @@
 import { DefaultPlayer as Video } from "react-html5video";
 import "react-html5video/dist/styles.css";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import { textAnimate } from "../animation";
@@ -56,6 +56,7 @@ const Section = styled.section`
       margin-top: 4rem;
       .hero_cta--button {
         cursor: pointer;
+        font-family: inherit;
         font-size: 1.1rem;
         font-weight: 500;
         background-color: ${(props) => props.theme.blue};

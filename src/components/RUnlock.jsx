@@ -1,12 +1,28 @@
 import styled from "styled-components";
-// import { motion } from "framer-motion";
+import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
+import { getAuth } from "firebase/auth";
 // import { textAnimate } from "../animation";
 
 const RUnlock = () => {
+  const navigate = useNavigate();
+  const auth = getAuth();
+
+  const onLogOut = () => {
+    auth.signOut();
+    navigate("/sign-in");
+  };
   return (
     <Section>
       <div className="container">
-        <h1>Unlock Your Full Potential</h1>
+        <Text>
+          <motion.div className="head">
+            <h1>Unlock Your Full Potential</h1>
+            <button onClick={onLogOut}>
+              Sign Out
+            </button>
+          </motion.div>
+        </Text>
       </div>
     </Section>
   );
@@ -21,7 +37,30 @@ const Section = styled.section`
   .container {
     width: 87%;
     margin: 0 auto;
-    padding: 5rem 0;
+    padding: 3rem 0;
+  }
+`;
+
+const Text = styled(motion.article)`
+  .head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    h1 {
+      font-size: 2rem;
+      color: ${(props) => props.theme.text1};
+    }
+    button {
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 1rem;
+      font-weight: 500;
+      background-color: ${(props) => props.theme.blue};
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 10px;
+      color: #fff;
+    }
   }
 `;
 
