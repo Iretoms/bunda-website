@@ -208,7 +208,7 @@ const MultiStepForm = () => {
             <button type="button" onClick={handlePrev} disabled={step === 1}>
               Prev
             </button>
-            <button type="button" onClick={handleNext} disabled={step === 3}>
+            <button type="button" onClick={handleNext} disabled={step === 10}>
               Next
             </button>
           </div>
