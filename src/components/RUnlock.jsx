@@ -2,7 +2,8 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { getAuth } from "firebase/auth";
-// import { textAnimate } from "../animation";
+import { textAnimate } from "../animation";
+import MultiStepForm from "./MultiStepForm";
 
 const RUnlock = () => {
   const navigate = useNavigate();
@@ -15,14 +16,17 @@ const RUnlock = () => {
   return (
     <Section>
       <div className="container">
-        <Text>
-          <motion.div className="head">
+        <Text
+          initial="hide"
+          animate={"show"}
+          transition={{ staggerChildren: 0.5 }}
+        >
+          <motion.div variants={textAnimate} className="head">
             <h1>Unlock Your Full Potential</h1>
-            <button onClick={onLogOut}>
-              Sign Out
-            </button>
+            <button onClick={onLogOut}>Sign Out</button>
           </motion.div>
         </Text>
+        <MultiStepForm/>
       </div>
     </Section>
   );
@@ -42,6 +46,7 @@ const Section = styled.section`
 `;
 
 const Text = styled(motion.article)`
+  margin-bottom: 4rem;
   .head {
     display: flex;
     justify-content: space-between;
@@ -61,6 +66,16 @@ const Text = styled(motion.article)`
       border-radius: 10px;
       color: #fff;
     }
+  }
+
+  @media screen and (max-width: 40rem) {
+   .head {
+    flex-direction: column-reverse;
+    gap: 1rem;
+    h1 {
+      font-size: 1.7rem;
+    }
+   }
   }
 `;
 
