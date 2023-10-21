@@ -88,12 +88,11 @@ const MultiStepForm = () => {
             className="formControl"
           >
             <label htmlFor="name">Address</label>
-            <input
-              type="text"
+            <textarea
               id="address"
               value={formData.address}
               onChange={handleChange}
-            />
+            ></textarea>
           </motion.div>
         )}
         {step === 5 && (
@@ -144,6 +143,11 @@ const MultiStepForm = () => {
               value={formData.BusinessAddress}
               onChange={handleChange}
             />
+            <textarea
+              id="BusinessAddress"
+              value={formData.BusinessAddress}
+              onChange={handleChange}
+            ></textarea>
           </motion.div>
         )}
         {step === 8 && (
@@ -191,7 +195,6 @@ const MultiStepForm = () => {
               id="website"
               value={formData.website}
               onChange={handleChange}
-              placeholder="dd/mm/yy"
             />
           </motion.div>
         )}
@@ -244,6 +247,21 @@ const Container = styled.article`
         font-size: 1.1rem;
         padding: 1rem 0;
         height: 2.5rem;
+        border: none;
+        border-bottom: ${(props) => props.theme.FB};
+        background-color: transparent;
+        &:focus {
+          border-color: ${(props) => props.theme.blue};
+          outline: none;
+        }
+      }
+      textarea {
+        resize: none;
+        color: ${(props) => props.theme.text3};
+        font-family: inherit;
+        font-size: 1.1rem;
+        padding: 1rem 0;
+        min-height: 2.5rem;
         border: none;
         border-bottom: ${(props) => props.theme.FB};
         background-color: transparent;
