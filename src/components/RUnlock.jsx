@@ -2,8 +2,8 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { getAuth } from "firebase/auth";
+import unlock from "../assets/png/unlock.png";
 import { textAnimate } from "../animation";
-import MultiStepForm from "./MultiStepForm";
 
 const RUnlock = () => {
   const navigate = useNavigate();
@@ -19,14 +19,22 @@ const RUnlock = () => {
         <Text
           initial="hide"
           animate={"show"}
-          transition={{ staggerChildren: 0.5 }}
+          transition={{ staggerChildren: 0.3 }}
         >
-          <motion.div variants={textAnimate} className="head">
-            <h1>Unlock Your Full Potential</h1>
+          <motion.h1 variants={textAnimate}>
+            Unlock your Full Potentials
+          </motion.h1>
+          <motion.p variants={textAnimate}>
+            Ready to take the first step towards realizing your business dreams?
+            Share your vision in the questionnaire below
+          </motion.p>
+          <motion.div variants={textAnimate}>
             <button onClick={onLogOut}>Sign Out</button>
           </motion.div>
         </Text>
-        <MultiStepForm/>
+        <Image>
+          <img src={unlock} alt="unlock" />
+        </Image>
       </div>
     </Section>
   );
@@ -36,32 +44,54 @@ const Section = styled.section`
   margin-top: 12vh;
   background-color: ${(props) => props.theme.primaryBg};
   width: 100%;
-  min-height: 100vh;
+  min-height: 80vh;
   transition: background-color 0.3s ease-out;
   .container {
-    width: 87%;
+    width: 88%;
     margin: 0 auto;
-    padding: 3rem 0;
+    padding: 5rem 0;
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    article {
+      width: 50%;
+    }
+  }
+
+  @media screen and (max-width: 40rem) {
+    .container {
+      padding-top: 3rem;
+      flex-direction: column;
+      gap: 3rem;
+      article {
+        width: 100%;
+      }
+    }
   }
 `;
 
 const Text = styled(motion.article)`
-  margin-bottom: 4rem;
-  .head {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    h1 {
-      font-size: 2rem;
-      color: ${(props) => props.theme.text1};
-    }
+  h1 {
+    line-height: 2.7rem;
+    font-weight: bold;
+    font-size: 2.3rem;
+    color: ${(props) => props.theme.text1};
+    margin-bottom: 1.5rem;
+  }
+  p {
+    color: ${(props) => props.theme.text2};
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  div {
+    padding-top: 3rem;
     button {
       cursor: pointer;
-      font-family: inherit;
-      font-size: 1rem;
+      font-size: 1.1rem;
       font-weight: 500;
+      font-family: inherit;
       background-color: ${(props) => props.theme.blue};
-      padding: 1rem 2rem;
+      padding: 1rem 2.1rem;
       border: none;
       border-radius: 10px;
       color: #fff;
@@ -69,13 +99,24 @@ const Text = styled(motion.article)`
   }
 
   @media screen and (max-width: 40rem) {
-   .head {
-    flex-direction: column-reverse;
-    gap: 1rem;
+    text-align: center;
     h1 {
-      font-size: 1.7rem;
+      font-size: 2rem;
     }
-   }
+    p {
+      font-size: 1rem;
+    }
+  }
+`;
+
+const Image = styled.article`
+  height: 25rem;
+  overflow: hidden;
+  border-radius: 10px;
+  img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
   }
 `;
 

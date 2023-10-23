@@ -137,12 +137,6 @@ const MultiStepForm = () => {
             className="formControl"
           >
             <label htmlFor="name">Business Address</label>
-            <input
-              type="text"
-              id="BusinessAddress"
-              value={formData.BusinessAddress}
-              onChange={handleChange}
-            />
             <textarea
               id="BusinessAddress"
               value={formData.BusinessAddress}
@@ -198,6 +192,22 @@ const MultiStepForm = () => {
             />
           </motion.div>
         )}
+        {step === 11 && (
+          <motion.div
+            variants={textAnimate}
+            initial="hide"
+            animate={"show"}
+            className="formControl"
+          >
+            <label htmlFor="name">What is the nature of your business?</label>
+            <textarea
+              id="BusinessNature"
+              value={formData.BusinessNature}
+              onChange={handleChange}
+            ></textarea>
+          </motion.div>
+        )}
+        
 
         {isLastStep ? (
           <div className="buttonContainer">
