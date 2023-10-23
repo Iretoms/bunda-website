@@ -6,8 +6,9 @@ import { textAnimate } from "../animation";
 const MultiStepForm = () => {
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({});
+  const [file, setFile] = useState(null);
 
-  const isLastStep = step === 10;
+  const isLastStep = step === 25;
 
   const handleNext = () => {
     setStep(step + 1);
@@ -22,9 +23,15 @@ const MultiStepForm = () => {
     setFormData({ ...formData, [id]: value });
   };
 
+  const handleFileChange = (e) => {
+    const selectedFile = e.target.files[0];
+    setFile(selectedFile);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Form data submitted:", formData);
+    console.log("file submitted", file)
   };
   return (
     <Container>
@@ -55,7 +62,7 @@ const MultiStepForm = () => {
             animate={"show"}
             className="formControl"
           >
-            <label htmlFor="name">Email Address</label>
+            <label htmlFor="email">Email Address</label>
             <input
               type="email"
               id="email"
@@ -71,7 +78,7 @@ const MultiStepForm = () => {
             animate={"show"}
             className="formControl"
           >
-            <label htmlFor="name">Phone Number</label>
+            <label htmlFor="phone">Phone Number</label>
             <input
               type="text"
               id="phone"
@@ -87,7 +94,7 @@ const MultiStepForm = () => {
             animate={"show"}
             className="formControl"
           >
-            <label htmlFor="name">Address</label>
+            <label htmlFor="address">Address</label>
             <textarea
               id="address"
               value={formData.address}
@@ -102,7 +109,7 @@ const MultiStepForm = () => {
             animate={"show"}
             className="formControl"
           >
-            <label htmlFor="name">Date of Birth</label>
+            <label htmlFor="DoB">Date of Birth</label>
             <input
               type="text"
               id="DoB"
@@ -119,7 +126,7 @@ const MultiStepForm = () => {
             animate={"show"}
             className="formControl"
           >
-            <label htmlFor="name">Business Name</label>
+            <label htmlFor="BusinessName">Business Name</label>
             <input
               type="text"
               id="BusinessName"
@@ -136,7 +143,7 @@ const MultiStepForm = () => {
             animate={"show"}
             className="formControl"
           >
-            <label htmlFor="name">Business Address</label>
+            <label htmlFor="BusinessAddress">Business Address</label>
             <textarea
               id="BusinessAddress"
               value={formData.BusinessAddress}
@@ -151,7 +158,7 @@ const MultiStepForm = () => {
             animate={"show"}
             className="formControl"
           >
-            <label htmlFor="name">Business Phone Number</label>
+            <label htmlFor="BusinessPhone">Business Phone Number</label>
             <input
               type="text"
               id="BusinessPhone"
@@ -167,7 +174,7 @@ const MultiStepForm = () => {
             animate={"show"}
             className="formControl"
           >
-            <label htmlFor="name">Business Email</label>
+            <label htmlFor="BusinessMail">Business Email</label>
             <input
               type="text"
               id="BusinessMail"
@@ -183,7 +190,7 @@ const MultiStepForm = () => {
             animate={"show"}
             className="formControl"
           >
-            <label htmlFor="name">Website (if applicable)</label>
+            <label htmlFor="website">Website (if applicable)</label>
             <input
               type="text"
               id="website"
@@ -199,7 +206,9 @@ const MultiStepForm = () => {
             animate={"show"}
             className="formControl"
           >
-            <label htmlFor="name">What is the nature of your business?</label>
+            <label htmlFor="BusinessNature">
+              What is the nature of your business?
+            </label>
             <textarea
               id="BusinessNature"
               value={formData.BusinessNature}
@@ -207,7 +216,246 @@ const MultiStepForm = () => {
             ></textarea>
           </motion.div>
         )}
-        
+        {step === 12 && (
+          <motion.div
+            variants={textAnimate}
+            initial="hide"
+            animate={"show"}
+            className="formControl"
+          >
+            <label htmlFor="BusinessProducts">
+              What products or services do you offer?
+            </label>
+            <textarea
+              id="BusinessProducts"
+              value={formData.BusinessProducts}
+              onChange={handleChange}
+            ></textarea>
+          </motion.div>
+        )}
+        {step === 13 && (
+          <motion.div
+            variants={textAnimate}
+            initial="hide"
+            animate={"show"}
+            className="formControl"
+          >
+            <label htmlFor="USP">
+              What is your unique selling proposition (USP)
+            </label>
+            <textarea
+              id="USP"
+              value={formData.USP}
+              onChange={handleChange}
+            ></textarea>
+          </motion.div>
+        )}
+        {step === 14 && (
+          <motion.div
+            variants={textAnimate}
+            initial="hide"
+            animate={"show"}
+            className="formControl"
+          >
+            <label htmlFor="TargetMarket">
+              What is your target market or audience?
+            </label>
+            <textarea
+              id="TargetMarket"
+              value={formData.TargetMarket}
+              onChange={handleChange}
+            ></textarea>
+          </motion.div>
+        )}
+        {step === 15 && (
+          <motion.div
+            variants={textAnimate}
+            initial="hide"
+            animate={"show"}
+            className="formControl"
+          >
+            <label htmlFor="BusinessGoal">
+              What are your short-term and long-term business goals?
+            </label>
+            <textarea
+              id="BusinessGoal"
+              value={formData.BusinessGoal}
+              onChange={handleChange}
+            ></textarea>
+          </motion.div>
+        )}
+        {step === 16 && (
+          <motion.div
+            variants={textAnimate}
+            initial="hide"
+            animate={"show"}
+            className="formControl"
+          >
+            <label htmlFor="BusinessPlan">
+              How do you plan to achieve these goals?
+            </label>
+            <textarea
+              id="BusinessPlan"
+              value={formData.BusinessPlan}
+              onChange={handleChange}
+            ></textarea>
+          </motion.div>
+        )}
+        {step === 17 && (
+          <motion.div
+            variants={textAnimate}
+            initial="hide"
+            animate={"show"}
+            className="formControl"
+          >
+            <label htmlFor="BusinessChallenges">
+              What challenges do you foresee in reaching your goals?
+            </label>
+            <textarea
+              id="BusinessChallenges"
+              value={formData.BusinessChallenges}
+              onChange={handleChange}
+            ></textarea>
+          </motion.div>
+        )}
+        {step === 18 && (
+          <motion.div
+            variants={textAnimate}
+            initial="hide"
+            animate={"show"}
+            className="formControl"
+          >
+            <label htmlFor="MarketResearch">
+              Have you conducted market research? If so, please provide key
+              findings
+            </label>
+            <textarea
+              id="MarketResearch"
+              value={formData.MarketResearch}
+              onChange={handleChange}
+            ></textarea>
+          </motion.div>
+        )}
+        {step === 19 && (
+          <motion.div
+            variants={textAnimate}
+            initial="hide"
+            animate={"show"}
+            className="formControl"
+          >
+            <label htmlFor="MainCompetitors">
+              Who are your main competitors?
+            </label>
+            <textarea
+              id="MainCompetitors"
+              value={formData.MainCompetitors}
+              onChange={handleChange}
+            ></textarea>
+          </motion.div>
+        )}
+        {step === 20 && (
+          <motion.div
+            variants={textAnimate}
+            initial="hide"
+            animate={"show"}
+            className="formControl"
+          >
+            <label htmlFor="CompetitionStrategies">
+              What strategies do you plan to use to stay competitive in your
+              industry?
+            </label>
+            <textarea
+              id="CompetitionStrategies"
+              value={formData.CompetitionStrategies}
+              onChange={handleChange}
+            ></textarea>
+          </motion.div>
+        )}
+        {step === 21 && (
+          <motion.div
+            variants={textAnimate}
+            initial="hide"
+            animate={"show"}
+            className="formControl"
+          >
+            <label htmlFor="FinancialStatus">
+              What is your current financial status (revenue, expenses,
+              profit/loss)?
+            </label>
+            <textarea
+              id="FinancialStatus"
+              value={formData.FinancialStatus}
+              onChange={handleChange}
+            ></textarea>
+          </motion.div>
+        )}
+        {step === 22 && (
+          <motion.div
+            variants={textAnimate}
+            initial="hide"
+            animate={"show"}
+            className="formControl"
+          >
+            <label htmlFor="Funding">How much funding are you seeking?</label>
+            <input
+              type="text"
+              id="Funding"
+              value={formData.Funding}
+              onChange={handleChange}
+            />
+          </motion.div>
+        )}
+        {step === 23 && (
+          <motion.div
+            variants={textAnimate}
+            initial="hide"
+            animate={"show"}
+            className="formControl"
+          >
+            <label htmlFor="UseFunds">
+              How do you plan to use the funds if granted?
+            </label>
+            <textarea
+              id="UseFunds"
+              value={formData.UseFunds}
+              onChange={handleChange}
+            ></textarea>
+          </motion.div>
+        )}
+        {step === 24 && (
+          <motion.div
+            variants={textAnimate}
+            initial="hide"
+            animate={"show"}
+            className="formControl"
+          >
+            <label htmlFor="CompetitionStrategies">
+              Do you have a detailed business plan? if yes, please attach it
+            </label>
+            <input
+              type="file"
+              accept=".doc, .docx"
+              onChange={handleFileChange}
+            />
+          </motion.div>
+        )}
+        {step === 25 && (
+          <motion.div
+            variants={textAnimate}
+            initial="hide"
+            animate={"show"}
+            className="formControl"
+          >
+            <label htmlFor="ProfitabilityTimeline">
+              What is your timeline for achieving profitability?
+            </label>
+            <textarea
+              id="ProfitabilityTimeline"
+              value={formData.ProfitabilityTimeline}
+              onChange={handleChange}
+            ></textarea>
+          </motion.div>
+        )}
 
         {isLastStep ? (
           <div className="buttonContainer">
@@ -221,7 +469,7 @@ const MultiStepForm = () => {
             <button type="button" onClick={handlePrev} disabled={step === 1}>
               Prev
             </button>
-            <button type="button" onClick={handleNext} disabled={step === 10}>
+            <button type="button" onClick={handleNext} disabled={step === 25}>
               Next
             </button>
           </div>
