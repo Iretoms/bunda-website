@@ -8,7 +8,7 @@ const MultiStepForm = () => {
   const [formData, setFormData] = useState({});
   const [file, setFile] = useState(null);
 
-  const isLastStep = step === 37;
+  const isLastStep = step === 36;
 
   const handleNext = () => {
     setStep(step + 1);
@@ -582,24 +582,6 @@ const MultiStepForm = () => {
             animate={"show"}
             className="formControl"
           >
-            <label htmlFor="LegalConsiderations">
-              Are there any legal or regulatory considerations specific to your
-              business?
-            </label>
-            <textarea
-              id="LegalConsiderations"
-              value={formData.LegalConsiderations}
-              onChange={handleChange}
-            ></textarea>
-          </motion.div>
-        )}
-        {step === 34 && (
-          <motion.div
-            variants={textAnimate}
-            initial="hide"
-            animate={"show"}
-            className="formControl"
-          >
             <label htmlFor="NecessaryLicenses">
               Do you have the necessary licenses and permits?
             </label>
@@ -610,7 +592,7 @@ const MultiStepForm = () => {
             ></textarea>
           </motion.div>
         )}
-        {step === 35 && (
+        {step === 34 && (
           <motion.div
             variants={textAnimate}
             initial="hide"
@@ -627,7 +609,7 @@ const MultiStepForm = () => {
             ></textarea>
           </motion.div>
         )}
-        {step === 36 && (
+        {step === 35 && (
           <motion.div
             variants={textAnimate}
             initial="hide"
@@ -644,7 +626,7 @@ const MultiStepForm = () => {
             ></textarea>
           </motion.div>
         )}
-        {step === 37 && (
+        {step === 36 && (
           <motion.div
             variants={textAnimate}
             initial="hide"
@@ -675,7 +657,7 @@ const MultiStepForm = () => {
             <button type="button" onClick={handlePrev} disabled={step === 1}>
               Prev
             </button>
-            <button type="button" onClick={handleNext} disabled={step === 37}>
+            <button type="button" onClick={handleNext} disabled={step === 36}>
               Next
             </button>
           </div>
