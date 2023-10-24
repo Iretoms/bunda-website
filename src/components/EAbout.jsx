@@ -25,25 +25,22 @@ const EAbout = () => {
           <motion.article variants={textAnimate}>
             <h2>Who We Are</h2>
             <p>
-              Bunda Solutions is more than just a platform; it's a community of
-              passionate individuals dedicated to fostering innovation and
-              nurturing the entrepreneurial spirit. Our team is comprised of
-              seasoned professionals who understand the challenges entrepreneurs
-              face when trying to secure the funding needed to turn their ideas
-              into reality. With years of experience in various industries, we
-              are committed to empowering the next generation of visionaries.
+              Bunda Solutions is a community of experienced professionals
+              dedicated to supporting innovation and entrepreneurship. We
+              understand the challenges entrepreneurs face in securing funding
+              and are committed to empowering the next generation of
+              visionaries.
             </p>
           </motion.article>
           <motion.div variants={textAnimate} className="line"></motion.div>
           <motion.article variants={textAnimate}>
             <h2>What We Do</h2>
             <p>
-              At Bunda Solutions, we simplify the complex process of securing
-              capital for your business. We recognize that even the most
-              brilliant ideas can remain dormant without the necessary financial
-              backing. Our platform is designed to bridge this gap, providing
-              you with a straightforward path to connect with potential
-              investors and experts who share your enthusiasm for your project.
+              Bunda Solutions simplifies the process of obtaining capital for
+              your business, acknowledging that great ideas often need financial
+              support to thrive. Our platform connects you with potential
+              investors and experts who share your enthusiasm for your project,
+              making the path to securing funding straightforward.
             </p>
           </motion.article>
         </About>
@@ -54,7 +51,7 @@ const EAbout = () => {
 
 const Section = styled.section`
   width: 100%;
-  min-height: 50vh;
+  min-height: 60vh;
   background: ${(props) => props.theme.primaryBg};
   transition: background-color 0.3s ease-out;
 `;
@@ -62,7 +59,7 @@ const Section = styled.section`
 const Container = styled.div`
   width: 88%;
   margin: 0 auto;
-  padding: 3rem 0;
+  padding: 3rem 0 5rem;
   .head {
     text-align: center;
     color: ${(props) => props.theme.text1};

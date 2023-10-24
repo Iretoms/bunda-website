@@ -1,5 +1,6 @@
 import Questionnaire from "../components/Questionnaire";
 import RUnlock from "../components/RUnlock";
+import EFooter from "../components/EFooter";
 
 
 const GetStarted = () => {
@@ -7,6 +8,7 @@ const GetStarted = () => {
         <>
             <RUnlock/>
             <Questionnaire/>
+            <EFooter/>
         </>
     );
 };
