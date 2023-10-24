@@ -89,6 +89,8 @@ const About = styled(motion.div)`
       margin-bottom: 1.5rem;
     }
     p {
+      text-align: justify;
+      text-justify: auto;
       line-height: 2rem;
       font-size: 1.1rem;
       color: ${(props) => props.theme.text2};

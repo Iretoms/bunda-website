@@ -31,7 +31,7 @@ const MultiStepForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Form data submitted:", formData);
-    console.log("file submitted", file)
+    console.log("file submitted", file);
   };
   return (
     <Container>
@@ -452,6 +452,196 @@ const MultiStepForm = () => {
             <textarea
               id="ProfitabilityTimeline"
               value={formData.ProfitabilityTimeline}
+              onChange={handleChange}
+            ></textarea>
+          </motion.div>
+        )}
+        {step === 26 && (
+          <motion.div
+            variants={textAnimate}
+            initial="hide"
+            animate={"show"}
+            className="formControl"
+          >
+            <label htmlFor="MarketProducts">
+              How do you plan to market your products or services?
+            </label>
+            <textarea
+              id="MarketProducts"
+              value={formData.MarketProducts}
+              onChange={handleChange}
+            ></textarea>
+          </motion.div>
+        )}
+        {step === 27 && (
+          <motion.div
+            variants={textAnimate}
+            initial="hide"
+            animate={"show"}
+            className="formControl"
+          >
+            <label htmlFor="PricingStrategy">
+              What is your pricing strategy?
+            </label>
+            <textarea
+              id="PricingStrategy"
+              value={formData.PricingStrategy}
+              onChange={handleChange}
+            ></textarea>
+          </motion.div>
+        )}
+        {step === 28 && (
+          <motion.div
+            variants={textAnimate}
+            initial="hide"
+            animate={"show"}
+            className="formControl"
+          >
+            <label htmlFor="KeyMembers">
+              Who are the key members of your team, and what are their roles?
+            </label>
+            <textarea
+              id="KeyMembers"
+              value={formData.KeyMembers}
+              onChange={handleChange}
+            ></textarea>
+          </motion.div>
+        )}
+        {step === 29 && (
+          <motion.div
+            variants={textAnimate}
+            initial="hide"
+            animate={"show"}
+            className="formControl"
+          >
+            <label htmlFor="RelevantExperience">
+              What relevant experience and skills do you and your team possess?
+            </label>
+            <textarea
+              id="RelevantExperience"
+              value={formData.RelevantExperience}
+              onChange={handleChange}
+            ></textarea>
+          </motion.div>
+        )}
+        {step === 30 && (
+          <motion.div
+            variants={textAnimate}
+            initial="hide"
+            animate={"show"}
+            className="formControl"
+          >
+            <label htmlFor="AddressSkillGap">
+              How do you plan to address any skill gaps in your team?
+            </label>
+            <textarea
+              id="AddressSkillGap"
+              value={formData.AddressSkillGap}
+              onChange={handleChange}
+            ></textarea>
+          </motion.div>
+        )}
+        {step === 31 && (
+          <motion.div
+            variants={textAnimate}
+            initial="hide"
+            animate={"show"}
+            className="formControl"
+          >
+            <label htmlFor="LegalConsiderations">
+              Are there any legal or regulatory considerations specific to your
+              business?
+            </label>
+            <textarea
+              id="LegalConsiderations"
+              value={formData.LegalConsiderations}
+              onChange={handleChange}
+            ></textarea>
+          </motion.div>
+        )}
+        {step === 32 && (
+          <motion.div
+            variants={textAnimate}
+            initial="hide"
+            animate={"show"}
+            className="formControl"
+          >
+            <label htmlFor="LegalConsiderations">
+              Are there any legal or regulatory considerations specific to your
+              business?
+            </label>
+            <textarea
+              id="LegalConsiderations"
+              value={formData.LegalConsiderations}
+              onChange={handleChange}
+            ></textarea>
+          </motion.div>
+        )}
+        {step === 33 && (
+          <motion.div
+            variants={textAnimate}
+            initial="hide"
+            animate={"show"}
+            className="formControl"
+          >
+            <label htmlFor="NecessaryLicenses">
+              Do you have the necessary licenses and permits?
+            </label>
+            <textarea
+              id="NecessaryLicenses"
+              value={formData.NecessaryLicenses}
+              onChange={handleChange}
+            ></textarea>
+          </motion.div>
+        )}
+        {step === 34 && (
+          <motion.div
+            variants={textAnimate}
+            initial="hide"
+            animate={"show"}
+            className="formControl"
+          >
+            <label htmlFor="SocialImpactGoals">
+              Does your business have any social or environmental impact goals?
+            </label>
+            <textarea
+              id="SocialImpactGoals"
+              value={formData.SocialImpactGoals}
+              onChange={handleChange}
+            ></textarea>
+          </motion.div>
+        )}
+        {step === 35 && (
+          <motion.div
+            variants={textAnimate}
+            initial="hide"
+            animate={"show"}
+            className="formControl"
+          >
+            <label htmlFor="ImpactMeasurePlan">
+              How do you plan to measure and report on your impact?
+            </label>
+            <textarea
+              id="ImpactMeasurePlan"
+              value={formData.ImpactMeasurePlan}
+              onChange={handleChange}
+            ></textarea>
+          </motion.div>
+        )}
+        {step === 36 && (
+          <motion.div
+            variants={textAnimate}
+            initial="hide"
+            animate={"show"}
+            className="formControl"
+          >
+            <label htmlFor="AdditionalInfo">
+              Is there any additional information or context you would like to
+              provide about your business or proposal?
+            </label>
+            <textarea
+              id="AdditionalInfo"
+              value={formData.AdditionalInfo}
               onChange={handleChange}
             ></textarea>
           </motion.div>
