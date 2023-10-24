@@ -8,7 +8,7 @@ const MultiStepForm = () => {
   const [formData, setFormData] = useState({});
   const [file, setFile] = useState(null);
 
-  const isLastStep = step === 25;
+  const isLastStep = step === 37;
 
   const handleNext = () => {
     setStep(step + 1);
@@ -36,7 +36,7 @@ const MultiStepForm = () => {
   return (
     <Container>
       <motion.h1 variants={textAnimate} initial="hide" animate={"show"}>
-        {step > 5 ? "Business Information" : "Personal Information"}
+        {step > 6 ? "Business Information" : "Personal Information"}
       </motion.h1>
       <form onSubmit={handleSubmit}>
         {step === 1 && (
@@ -126,17 +126,33 @@ const MultiStepForm = () => {
             animate={"show"}
             className="formControl"
           >
+            <label htmlFor="EducationalBackground">
+              Educational Background
+            </label>
+            <textarea
+              id="EducationalBackground"
+              value={formData.EducationalBackground}
+              onChange={handleChange}
+            ></textarea>
+          </motion.div>
+        )}
+        {step === 7 && (
+          <motion.div
+            variants={textAnimate}
+            initial="hide"
+            animate={"show"}
+            className="formControl"
+          >
             <label htmlFor="BusinessName">Business Name</label>
             <input
               type="text"
               id="BusinessName"
               value={formData.BusinessName}
               onChange={handleChange}
-              usinessAddress
             />
           </motion.div>
         )}
-        {step === 7 && (
+        {step === 8 && (
           <motion.div
             variants={textAnimate}
             initial="hide"
@@ -151,7 +167,7 @@ const MultiStepForm = () => {
             ></textarea>
           </motion.div>
         )}
-        {step === 8 && (
+        {step === 9 && (
           <motion.div
             variants={textAnimate}
             initial="hide"
@@ -167,7 +183,7 @@ const MultiStepForm = () => {
             />
           </motion.div>
         )}
-        {step === 9 && (
+        {step === 10 && (
           <motion.div
             variants={textAnimate}
             initial="hide"
@@ -183,7 +199,7 @@ const MultiStepForm = () => {
             />
           </motion.div>
         )}
-        {step === 10 && (
+        {step === 11 && (
           <motion.div
             variants={textAnimate}
             initial="hide"
@@ -199,7 +215,7 @@ const MultiStepForm = () => {
             />
           </motion.div>
         )}
-        {step === 11 && (
+        {step === 12 && (
           <motion.div
             variants={textAnimate}
             initial="hide"
@@ -216,7 +232,7 @@ const MultiStepForm = () => {
             ></textarea>
           </motion.div>
         )}
-        {step === 12 && (
+        {step === 13 && (
           <motion.div
             variants={textAnimate}
             initial="hide"
@@ -233,7 +249,7 @@ const MultiStepForm = () => {
             ></textarea>
           </motion.div>
         )}
-        {step === 13 && (
+        {step === 14 && (
           <motion.div
             variants={textAnimate}
             initial="hide"
@@ -250,7 +266,7 @@ const MultiStepForm = () => {
             ></textarea>
           </motion.div>
         )}
-        {step === 14 && (
+        {step === 15 && (
           <motion.div
             variants={textAnimate}
             initial="hide"
@@ -267,7 +283,7 @@ const MultiStepForm = () => {
             ></textarea>
           </motion.div>
         )}
-        {step === 15 && (
+        {step === 16 && (
           <motion.div
             variants={textAnimate}
             initial="hide"
@@ -284,7 +300,7 @@ const MultiStepForm = () => {
             ></textarea>
           </motion.div>
         )}
-        {step === 16 && (
+        {step === 17 && (
           <motion.div
             variants={textAnimate}
             initial="hide"
@@ -301,7 +317,7 @@ const MultiStepForm = () => {
             ></textarea>
           </motion.div>
         )}
-        {step === 17 && (
+        {step === 18 && (
           <motion.div
             variants={textAnimate}
             initial="hide"
@@ -318,7 +334,7 @@ const MultiStepForm = () => {
             ></textarea>
           </motion.div>
         )}
-        {step === 18 && (
+        {step === 19 && (
           <motion.div
             variants={textAnimate}
             initial="hide"
@@ -336,7 +352,7 @@ const MultiStepForm = () => {
             ></textarea>
           </motion.div>
         )}
-        {step === 19 && (
+        {step === 20 && (
           <motion.div
             variants={textAnimate}
             initial="hide"
@@ -353,7 +369,7 @@ const MultiStepForm = () => {
             ></textarea>
           </motion.div>
         )}
-        {step === 20 && (
+        {step === 21 && (
           <motion.div
             variants={textAnimate}
             initial="hide"
@@ -371,7 +387,7 @@ const MultiStepForm = () => {
             ></textarea>
           </motion.div>
         )}
-        {step === 21 && (
+        {step === 22 && (
           <motion.div
             variants={textAnimate}
             initial="hide"
@@ -389,7 +405,7 @@ const MultiStepForm = () => {
             ></textarea>
           </motion.div>
         )}
-        {step === 22 && (
+        {step === 23 && (
           <motion.div
             variants={textAnimate}
             initial="hide"
@@ -405,7 +421,7 @@ const MultiStepForm = () => {
             />
           </motion.div>
         )}
-        {step === 23 && (
+        {step === 24 && (
           <motion.div
             variants={textAnimate}
             initial="hide"
@@ -422,7 +438,7 @@ const MultiStepForm = () => {
             ></textarea>
           </motion.div>
         )}
-        {step === 24 && (
+        {step === 25 && (
           <motion.div
             variants={textAnimate}
             initial="hide"
@@ -439,7 +455,7 @@ const MultiStepForm = () => {
             />
           </motion.div>
         )}
-        {step === 25 && (
+        {step === 26 && (
           <motion.div
             variants={textAnimate}
             initial="hide"
@@ -456,7 +472,7 @@ const MultiStepForm = () => {
             ></textarea>
           </motion.div>
         )}
-        {step === 26 && (
+        {step === 27 && (
           <motion.div
             variants={textAnimate}
             initial="hide"
@@ -473,7 +489,7 @@ const MultiStepForm = () => {
             ></textarea>
           </motion.div>
         )}
-        {step === 27 && (
+        {step === 28 && (
           <motion.div
             variants={textAnimate}
             initial="hide"
@@ -490,7 +506,7 @@ const MultiStepForm = () => {
             ></textarea>
           </motion.div>
         )}
-        {step === 28 && (
+        {step === 29 && (
           <motion.div
             variants={textAnimate}
             initial="hide"
@@ -507,7 +523,7 @@ const MultiStepForm = () => {
             ></textarea>
           </motion.div>
         )}
-        {step === 29 && (
+        {step === 30 && (
           <motion.div
             variants={textAnimate}
             initial="hide"
@@ -524,7 +540,7 @@ const MultiStepForm = () => {
             ></textarea>
           </motion.div>
         )}
-        {step === 30 && (
+        {step === 31 && (
           <motion.div
             variants={textAnimate}
             initial="hide"
@@ -537,24 +553,6 @@ const MultiStepForm = () => {
             <textarea
               id="AddressSkillGap"
               value={formData.AddressSkillGap}
-              onChange={handleChange}
-            ></textarea>
-          </motion.div>
-        )}
-        {step === 31 && (
-          <motion.div
-            variants={textAnimate}
-            initial="hide"
-            animate={"show"}
-            className="formControl"
-          >
-            <label htmlFor="LegalConsiderations">
-              Are there any legal or regulatory considerations specific to your
-              business?
-            </label>
-            <textarea
-              id="LegalConsiderations"
-              value={formData.LegalConsiderations}
               onChange={handleChange}
             ></textarea>
           </motion.div>
@@ -584,6 +582,24 @@ const MultiStepForm = () => {
             animate={"show"}
             className="formControl"
           >
+            <label htmlFor="LegalConsiderations">
+              Are there any legal or regulatory considerations specific to your
+              business?
+            </label>
+            <textarea
+              id="LegalConsiderations"
+              value={formData.LegalConsiderations}
+              onChange={handleChange}
+            ></textarea>
+          </motion.div>
+        )}
+        {step === 34 && (
+          <motion.div
+            variants={textAnimate}
+            initial="hide"
+            animate={"show"}
+            className="formControl"
+          >
             <label htmlFor="NecessaryLicenses">
               Do you have the necessary licenses and permits?
             </label>
@@ -594,7 +610,7 @@ const MultiStepForm = () => {
             ></textarea>
           </motion.div>
         )}
-        {step === 34 && (
+        {step === 35 && (
           <motion.div
             variants={textAnimate}
             initial="hide"
@@ -611,7 +627,7 @@ const MultiStepForm = () => {
             ></textarea>
           </motion.div>
         )}
-        {step === 35 && (
+        {step === 36 && (
           <motion.div
             variants={textAnimate}
             initial="hide"
@@ -628,7 +644,7 @@ const MultiStepForm = () => {
             ></textarea>
           </motion.div>
         )}
-        {step === 36 && (
+        {step === 37 && (
           <motion.div
             variants={textAnimate}
             initial="hide"
@@ -659,7 +675,7 @@ const MultiStepForm = () => {
             <button type="button" onClick={handlePrev} disabled={step === 1}>
               Prev
             </button>
-            <button type="button" onClick={handleNext} disabled={step === 25}>
+            <button type="button" onClick={handleNext} disabled={step === 37}>
               Next
             </button>
           </div>
