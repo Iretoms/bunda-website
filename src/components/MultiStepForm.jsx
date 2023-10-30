@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import { textAnimate } from "../animation";
+import { toast } from "react-toastify";
 
 const MultiStepForm = () => {
   const totalSteps = 36;
@@ -39,6 +40,10 @@ const MultiStepForm = () => {
     e.preventDefault();
     console.log("Form data submitted:", formData);
     console.log("file submitted", file);
+    toast.success("Submitted successfully");
+    setStep(1);
+    setFormData({});
+    setFile(null);
   };
   return (
     <Container>
