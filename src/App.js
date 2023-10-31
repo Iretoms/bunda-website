@@ -15,6 +15,7 @@ import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
 import ForgotPassword from "./pages/ForgotPassword";
 import PrivateRoute from "./components/PrivateRoute";
+import Access from "./pages/Access";
 
 function App() {
   const [loader, setLoader] = useState(true);
@@ -45,6 +46,7 @@ function App() {
                 <Route path="/sign-up" element={<SignUp />} />
                 <Route path="/sign-in" element={<SignIn />} />
                 <Route path="/forgot-password" element={<ForgotPassword />} />
+                <Route path="/access-training" element={<Access />} />
               </Routes>
               <ToastContainer />
             </main>
