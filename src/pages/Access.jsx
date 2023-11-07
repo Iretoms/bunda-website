@@ -1,9 +1,9 @@
-import React from 'react';
+// import styled from "styled-components";
 
 const Access = () => {
     return (
         <div>
-            Acessssss
+            Acessssss nothing yettt
         </div>
     );
 };
