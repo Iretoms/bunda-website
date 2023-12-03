@@ -1,3 +1,4 @@
+import { useContext } from "react";
 import styled from "styled-components";
 import { AiOutlineInstagram, AiFillLinkedin } from "react-icons/ai";
 import { FaEnvelope } from "react-icons/fa";
@@ -5,16 +6,20 @@ import logoWhite from "../assets/png/logoWhite.png";
 import { motion } from "framer-motion";
 import { textAnimate } from "../animation";
 import { useNavigate, useLocation } from "react-router-dom";
-import { getAuth } from "firebase/auth";
+import { UserContext } from "../context/user/UserContext";
 
 const EFooter = () => {
+  const { dispatch } = useContext(UserContext);
   const location = useLocation();
   const navigate = useNavigate();
-  const auth = getAuth();
-  const clickHandler = () =>{
- auth.signOut();
- navigate("/sign-in");
-  }
+
+  const clickHandler = () => {
+    localStorage.removeItem("user");
+    dispatch({
+      type: "USER_LOGOUT",
+    });
+    navigate("/sign-in");
+  };
   return (
     <StyledFooter>
       <Container>
@@ -76,20 +81,20 @@ const EFooter = () => {
         </motion.div>
 
         {location.pathname === "/get-started" && (
-            <motion.div
-              initial="hide"
-              whileInView={"show"}
-              viewport={{ once: true, amount: 1 }}
-              transition={{ staggerChildren: 0.8 }}
+          <motion.div
+            initial="hide"
+            whileInView={"show"}
+            viewport={{ once: true, amount: 1 }}
+            transition={{ staggerChildren: 0.8 }}
+          >
+            <motion.p
+              variants={textAnimate}
+              className="signout"
+              onClick={clickHandler}
             >
-              <motion.p
-                variants={textAnimate}
-                className="signout"
-                onClick={clickHandler}
-              >
-                Sign Out
-              </motion.p>
-            </motion.div>
+              Sign Out
+            </motion.p>
+          </motion.div>
         )}
 
         <motion.div
@@ -151,10 +156,10 @@ const Container = styled.div`
     margin-bottom: 2rem;
   }
 
-  .copyright, .signout {
+  .copyright,
+  .signout {
     text-align: center;
   }
-
 
   @media screen and (max-width: 40rem) {
     .description {

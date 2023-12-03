@@ -1,22 +1,17 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import styled from "styled-components";
-import {
-  getAuth,
-  createUserWithEmailAndPassword,
-  updateProfile,
-} from "firebase/auth";
-import { doc, setDoc, serverTimestamp } from "firebase/firestore";
-import { db } from "../firebase.config";
 import { toast } from "react-toastify";
 import { Link, useNavigate } from "react-router-dom";
 import { BiShowAlt, BiHide } from "react-icons/bi";
 import { Form } from "../style/Styles.js";
-import GoogleButton from "../components/GoogleButton";
+// import GoogleButton from "../components/GoogleButton";
 import Spinner from "../components/Spinner";
+import { UserContext } from "../context/user/UserContext";
+import { signUp } from "../context/user/UserActions.js";
 
 const SignUp = () => {
+  const { loading, dispatch } = useContext(UserContext);
   const navigate = useNavigate();
-  const [loading, setLoading] = useState(false);
   const [formData, SetFormData] = useState({
     name: "",
     email: "",
@@ -33,33 +28,31 @@ const SignUp = () => {
     }));
   };
 
-  const onSubmit = async (e) => {
+  const onSubmit = (e) => {
     e.preventDefault();
     try {
-      setLoading(true);
-      const auth = getAuth();
-      const userCredential = await createUserWithEmailAndPassword(
-        auth,
-        email,
-        password
-      );
-
-      const user = userCredential.user;
-
-      updateProfile(auth.currentUser, {
-        displayName: name,
+      dispatch({
+        type: "USER_LOGIN_REQUEST",
       });
 
       const formDataCopy = { ...formData };
-      delete formDataCopy.password;
-      formDataCopy.image = "";
-      formDataCopy.timestamp = serverTimestamp();
+      formDataCopy.language = "tr";
+      formDataCopy.platform = "Android";
+      formDataCopy.timezone = 0;
+      formDataCopy.devideId = "1111";
 
-      await setDoc(doc(db, "users", user.uid), formDataCopy);
+      const getSignUpData = async () => {
+        const signUpData = await signUp(formDataCopy);
+        dispatch({
+          type: "USER_LOGIN_SUCCESS",
+          payload: signUpData,
+        });
+      };
+
+      getSignUpData();
 
       navigate("/get-started");
     } catch (error) {
-      setLoading(false);
       toast.error("Something went wrong, try again");
     }
   };
@@ -115,10 +108,10 @@ const SignUp = () => {
               </button>
             </div>
           </form>
-          <div className="googleBtn_container">
+          {/* <div className="googleBtn_container">
             <p>or</p>
             <GoogleButton />
-          </div>
+          </div> */}
         </Form>
       </div>
     </Section>

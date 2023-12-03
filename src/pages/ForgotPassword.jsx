@@ -1,7 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
 import { Form } from "../style/Styles.js";
-import { getAuth, sendPasswordResetEmail } from "firebase/auth";
 import { toast } from "react-toastify";
 
 const ForgotPassword = () => {
@@ -13,8 +12,7 @@ const ForgotPassword = () => {
 
   const onSubmit = async () => {
     try {
-      const auth = getAuth();
-      await sendPasswordResetEmail(auth, email);
+      
       toast.success("Email was sent");
     } catch (error) {
       toast.error("Could not send reset email");

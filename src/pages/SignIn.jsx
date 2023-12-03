@@ -1,16 +1,18 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import styled from "styled-components";
 import { Link, useNavigate } from "react-router-dom";
 import { BiShowAlt, BiHide } from "react-icons/bi";
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { toast } from "react-toastify";
 import { Form } from "../style/Styles.js";
-import GoogleButton from "../components/GoogleButton.jsx";
+// import GoogleButton from "../components/GoogleButton.jsx";
 import Spinner from "../components/Spinner";
+import { UserContext } from "../context/user/UserContext";
+import { login } from "../context/user/UserActions.js";
 
 const SignIn = () => {
+  const { loading, dispatch } = useContext(UserContext);
   const navigate = useNavigate();
-  const [loading, setLoading] = useState(false);
+
   const [formData, SetFormData] = useState({ email: "", password: "" });
   const [show, setShow] = useState(false);
   const eyeIcon = show ? <BiShowAlt /> : <BiHide />;
@@ -24,24 +26,26 @@ const SignIn = () => {
     }));
   };
 
-  const onSubmit = async (e) => {
+  const onSubmit = (e) => {
     e.preventDefault();
     try {
-      setLoading(true);
-      const auth = getAuth();
+      dispatch({
+        type: "USER_LOGIN_REQUEST",
+      });
 
-      const userCredential = await signInWithEmailAndPassword(
-        auth,
-        email,
-        password
-      );
+      const getLoginData = async () => {
+        const loginData = await login(email, password);
+        dispatch({
+          type: "USER_LOGIN_SUCCESS",
+          payload: loginData,
+        });
+      };
 
-      if (userCredential.user) {
-        navigate("/get-started");
-      }
+      getLoginData();
+
+      navigate("/get-started");
     } catch (error) {
-      setLoading(false);
-      toast.error("Sorry you dont have an account, please Sign Up");
+      toast.error("Sorry you don't have an account, please Sign Up");
     }
   };
 
@@ -90,10 +94,10 @@ const SignIn = () => {
               </button>
             </div>
           </form>
-          <div className="googleBtn_container">
+          {/* <div className="googleBtn_container">
             <p>or</p>
             <GoogleButton />
-          </div>
+          </div> */}
         </Form>
       </div>
     </Section>

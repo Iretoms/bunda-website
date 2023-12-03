@@ -4,6 +4,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import GlobalStyles from "./style/GlobalStyles";
 import ThemeProvide from "./context/ThemeContext";
+import { UserProvider } from "./context/user/UserContext";
 import Header from "./components/Header";
 import Home from "./pages/Home";
 import SoftDev from "./pages/SoftDev";
@@ -30,28 +31,30 @@ function App() {
       <GlobalStyles />
       <ScrollTop />
       <ThemeProvide>
-        {loader ? (
-          <Loader />
-        ) : (
-          <>
-            <Header />
-            <main>
-              <Routes>
-                <Route path="/" element={<Entrepreneur />} />
-                <Route path="/brand" element={<Home />} />
-                <Route path="/software-development" element={<SoftDev />} />
-                <Route path="/get-started" element={<PrivateRoute />}>
-                  <Route path="/get-started" element={<GetStarted />} />
-                </Route>
-                <Route path="/sign-up" element={<SignUp />} />
-                <Route path="/sign-in" element={<SignIn />} />
-                <Route path="/forgot-password" element={<ForgotPassword />} />
-                <Route path="/access-training" element={<Access />} />
-              </Routes>
-              <ToastContainer />
-            </main>
-          </>
-        )}
+        <UserProvider>
+          {loader ? (
+            <Loader />
+          ) : (
+            <>
+              <Header />
+              <main>
+                <Routes>
+                  <Route path="/" element={<Entrepreneur />} />
+                  <Route path="/brand" element={<Home />} />
+                  <Route path="/software-development" element={<SoftDev />} />
+                  <Route path="/get-started" element={<PrivateRoute />}>
+                    <Route path="/get-started" element={<GetStarted />} />
+                  </Route>
+                  <Route path="/sign-up" element={<SignUp />} />
+                  <Route path="/sign-in" element={<SignIn />} />
+                  <Route path="/forgot-password" element={<ForgotPassword />} />
+                  <Route path="/access-training" element={<Access />} />
+                </Routes>
+                <ToastContainer />
+              </main>
+            </>
+          )}
+        </UserProvider>
       </ThemeProvide>
     </div>
   );
