@@ -2,7 +2,6 @@ import { useState, useContext } from "react";
 import styled from "styled-components";
 import { Link, useNavigate } from "react-router-dom";
 import { BiShowAlt, BiHide } from "react-icons/bi";
-import { toast } from "react-toastify";
 import { Form } from "../style/Styles.js";
 // import GoogleButton from "../components/GoogleButton.jsx";
 import Spinner from "../components/Spinner";
@@ -26,26 +25,25 @@ const SignIn = () => {
     }));
   };
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
-    try {
+    dispatch({
+      type: "USER_LOGIN_REQUEST",
+    });
+
+    const loginData = await login(email, password);
+    console.log("result", loginData);
+    if (loginData) {
       dispatch({
-        type: "USER_LOGIN_REQUEST",
+        type: "USER_LOGIN_SUCCESS",
+        payload: loginData,
       });
-
-      const getLoginData = async () => {
-        const loginData = await login(email, password);
-        dispatch({
-          type: "USER_LOGIN_SUCCESS",
-          payload: loginData,
-        });
-      };
-
-      getLoginData();
-
       navigate("/get-started");
-    } catch (error) {
-      toast.error("Sorry you don't have an account, please Sign Up");
+    } else {
+      dispatch({
+        type: "USER_LOGIN_FAIL",
+        payload: loginData,
+      });
     }
   };
 

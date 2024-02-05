@@ -1,6 +1,5 @@
 import { useState, useContext } from "react";
 import styled from "styled-components";
-import { toast } from "react-toastify";
 import { Link, useNavigate } from "react-router-dom";
 import { BiShowAlt, BiHide } from "react-icons/bi";
 import { Form } from "../style/Styles.js";
@@ -28,32 +27,33 @@ const SignUp = () => {
     }));
   };
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
-    try {
+    dispatch({
+      type: "USER_LOGIN_REQUEST",
+    });
+
+    const formDataCopy = { ...formData };
+    formDataCopy.language = "tr";
+    formDataCopy.platform = "Android";
+    formDataCopy.timezone = 0;
+    formDataCopy.devideId = "1111";
+
+    const signUpData = await signUp(formDataCopy);
+    console.log(signUpData);
+
+    if (signUpData) {
       dispatch({
-        type: "USER_LOGIN_REQUEST",
+        type: "USER_LOGIN_SUCCESS",
+        payload: signUpData,
       });
 
-      const formDataCopy = { ...formData };
-      formDataCopy.language = "tr";
-      formDataCopy.platform = "Android";
-      formDataCopy.timezone = 0;
-      formDataCopy.devideId = "1111";
-
-      const getSignUpData = async () => {
-        const signUpData = await signUp(formDataCopy);
-        dispatch({
-          type: "USER_LOGIN_SUCCESS",
-          payload: signUpData,
-        });
-      };
-
-      getSignUpData();
-
-      navigate("/get-started");
-    } catch (error) {
-      toast.error("Something went wrong, try again");
+      navigate("/sign-in");
+    } else {
+      dispatch({
+        type: "USER_LOGIN_FAIL",
+        payload: signUpData,
+      });
     }
   };
   return loading ? (

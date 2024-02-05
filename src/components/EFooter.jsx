@@ -12,6 +12,7 @@ const EFooter = () => {
   const { dispatch } = useContext(UserContext);
   const location = useLocation();
   const navigate = useNavigate();
+  const year = new Date().getFullYear();
 
   const clickHandler = () => {
     localStorage.removeItem("user");
@@ -104,7 +105,7 @@ const EFooter = () => {
           transition={{ staggerChildren: 0.8 }}
         >
           <motion.p variants={textAnimate} className="copyright">
-            Copyright &copy; 2023 Bunda
+            Copyright &copy; {year} Bunda
           </motion.p>
         </motion.div>
       </Container>

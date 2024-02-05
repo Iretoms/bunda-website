@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {useLocation} from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { AiOutlineInstagram, AiFillLinkedin } from "react-icons/ai";
 import { FaEnvelope } from "react-icons/fa";
 import logoWhite from "../assets/png/logoWhite.png";
@@ -7,7 +7,8 @@ import { motion } from "framer-motion";
 import { textAnimate } from "../animation";
 
 const Footer = () => {
-    const location = useLocation()
+  const location = useLocation();
+  const year = new Date().getFullYear();
   return (
     <StyledFooter>
       <Container>
@@ -82,7 +83,7 @@ const Footer = () => {
           transition={{ staggerChildren: 0.8 }}
         >
           <motion.p variants={textAnimate}>
-            Copyright &copy; 2023 Bunda
+            Copyright &copy; {year} Bunda
           </motion.p>
         </motion.div>
       </Container>
@@ -99,7 +100,7 @@ const StyledFooter = styled.footer`
 const Container = styled.div`
   width: 87%;
   margin: 0 auto;
-  padding: 5rem 0 ;
+  padding: 5rem 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -113,7 +114,7 @@ const Container = styled.div`
     width: 9rem;
     margin-bottom: 1rem;
     img {
-        width: 100%;
+      width: 100%;
     }
   }
 
