@@ -9,17 +9,17 @@ import { UserContext } from "../context/user/UserContext";
 import { login } from "../context/user/UserActions.js";
 
 const SignIn = () => {
-  const { loading, dispatch } = useContext(UserContext);
+  const { loading, isLoggedIn, dispatch } = useContext(UserContext);
   const navigate = useNavigate();
 
-  const [formData, SetFormData] = useState({ email: "", password: "" });
+  const [formData, setFormData] = useState({ email: "", password: "" });
   const [show, setShow] = useState(false);
   const eyeIcon = show ? <BiShowAlt /> : <BiHide />;
 
   const { email, password } = formData;
 
   const onChange = (e) => {
-    SetFormData((prevState) => ({
+    setFormData((prevState) => ({
       ...prevState,
       [e.target.id]: e.target.value,
     }));
@@ -32,19 +32,24 @@ const SignIn = () => {
     });
 
     const loginData = await login(email, password);
-    console.log("result", loginData);
+    
+
     if (loginData) {
       dispatch({
         type: "USER_LOGIN_SUCCESS",
         payload: loginData,
       });
-      navigate("/get-started");
+      localStorage.setItem("user", JSON.stringify(loginData));
     } else {
       dispatch({
         type: "USER_LOGIN_FAIL",
         payload: loginData,
       });
     }
+    console.log(isLoggedIn);
+    console.log("result", loginData);
+    setFormData({ email: "", password: "" });
+    navigate("/get-started");
   };
 
   return loading ? (

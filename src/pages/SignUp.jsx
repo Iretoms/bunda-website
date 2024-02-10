@@ -11,7 +11,7 @@ import { signUp } from "../context/user/UserActions.js";
 const SignUp = () => {
   const { loading, dispatch } = useContext(UserContext);
   const navigate = useNavigate();
-  const [formData, SetFormData] = useState({
+  const [formData, setFormData] = useState({
     name: "",
     email: "",
     password: "",
@@ -21,7 +21,7 @@ const SignUp = () => {
   const { name, email, password } = formData;
 
   const onChange = (e) => {
-    SetFormData((prevState) => ({
+    setFormData((prevState) => ({
       ...prevState,
       [e.target.id]: e.target.value,
     }));
@@ -40,21 +40,20 @@ const SignUp = () => {
     formDataCopy.devideId = "1111";
 
     const signUpData = await signUp(formDataCopy);
-    console.log(signUpData);
 
     if (signUpData) {
       dispatch({
         type: "USER_LOGIN_SUCCESS",
         payload: signUpData,
       });
-
-      navigate("/sign-in");
     } else {
       dispatch({
         type: "USER_LOGIN_FAIL",
         payload: signUpData,
       });
     }
+    setFormData({ name: "", email: "", password: "" });
+    navigate("/sign-in");
   };
   return loading ? (
     <Spinner />
