@@ -46,8 +46,8 @@ const SignIn = () => {
         payload: loginData,
       });
     }
-    console.log(isLoggedIn);
-    console.log("result", loginData);
+    // console.log(isLoggedIn);
+    // console.log("result", loginData);
     setFormData({ email: "", password: "" });
     navigate("/get-started");
   };
